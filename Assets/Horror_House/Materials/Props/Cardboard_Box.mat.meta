@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 601732ae105d13d49ac836f352f553dc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Materials/Props/Cardboard_Box.mat
+  uploadId: 620059

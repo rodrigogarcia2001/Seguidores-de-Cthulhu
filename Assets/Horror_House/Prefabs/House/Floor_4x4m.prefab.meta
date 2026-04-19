@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e552d1596200b574ab33e712a4d8f878
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Prefabs/House/Floor_4x4m.prefab
+  uploadId: 620059

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b89b588986b2a9249bad6e4cfb2d2f10
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Materials/Furniture/Sink.mat
+  uploadId: 620059

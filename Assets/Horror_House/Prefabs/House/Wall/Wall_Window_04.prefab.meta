@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bd1f23ae2b9c26941885ead8d6fe4fb0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Prefabs/House/Wall/Wall_Window_04.prefab
+  uploadId: 620059

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5c1cb4d2b4e90b64284c1afab5cb9f08
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Materials/Furniture/Dressing_Table.mat
+  uploadId: 620059

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 714af8dae03876e4ea324951659eaf3b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Prefabs/House/Floor_1x1m.prefab
+  uploadId: 620059

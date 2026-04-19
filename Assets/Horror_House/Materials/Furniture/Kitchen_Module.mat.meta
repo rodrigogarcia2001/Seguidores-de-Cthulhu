@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 07ce3cb8368e3da47bc3c86395209c2a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Materials/Furniture/Kitchen_Module.mat
+  uploadId: 620059

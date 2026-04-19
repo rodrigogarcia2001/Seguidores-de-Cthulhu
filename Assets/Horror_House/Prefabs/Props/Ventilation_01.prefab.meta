@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 26d917d35bb24d149975a2380ef33454
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Prefabs/Props/Ventilation_01.prefab
+  uploadId: 620059

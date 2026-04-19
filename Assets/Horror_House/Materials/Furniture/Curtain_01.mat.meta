@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 262fba61dbc6f7646be9522cf0c2cf6b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Materials/Furniture/Curtain_01.mat
+  uploadId: 620059
