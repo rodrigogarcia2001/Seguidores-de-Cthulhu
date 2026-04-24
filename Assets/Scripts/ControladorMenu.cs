@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class ControladorMenu : MonoBehaviour
 {
+    // Esto permite que otros scripts lo encuentren fácilmente (Singleton)
+    public static ControladorMenu instancia;
+
     [Header("Paneles (UI)")]
     public GameObject panelPausa;
     public GameObject panelPerder;
@@ -14,11 +17,21 @@ public class ControladorMenu : MonoBehaviour
 
     private bool estaPausado = false;
 
+    void Awake()
+    {
+        // Configuramos la instancia al iniciar
+        if (instancia == null) instancia = this;
+    }
+
     void Update()
     {
-        // Solo permitimos la pausa si los paneles de ganar/perder están apagados
-        if (Input.GetKeyDown(KeyCode.P) && !panelPerder.activeSelf && !panelGanar.activeSelf)
+        // Solo permitimos usar la P si NO están activos los paneles de Ganar o Perder
+        if (Input.GetKeyDown(KeyCode.P))
         {
+            // Verificamos que los paneles existan antes de preguntar si están activos
+            if ((panelPerder != null && panelPerder.activeSelf) || (panelGanar != null && panelGanar.activeSelf))
+                return;
+
             if (estaPausado) Reanudar();
             else Pausar();
         }
@@ -28,7 +41,7 @@ public class ControladorMenu : MonoBehaviour
     public void EmpezarJuego()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("EscenaJuego");
+        SceneManager.LoadScene("EscenaJuego"); // Cambiar al nombre real de la escena
     }
 
     public void IrAlMenuPrincipal()
@@ -46,17 +59,18 @@ public class ControladorMenu : MonoBehaviour
     // --- SISTEMA DE PAUSA ---
     public void Pausar()
     {
-        panelPausa.SetActive(true);
+        if (panelPausa) panelPausa.SetActive(true);
         if (botonIniciar) botonIniciar.SetActive(false);
         if (botonSalir) botonSalir.SetActive(false);
 
         Time.timeScale = 0f;
         estaPausado = true;
+        HabilitarRaton(); // Útil para poder hacer clic en la pausa
     }
 
     public void Reanudar()
     {
-        panelPausa.SetActive(false);
+        if (panelPausa) panelPausa.SetActive(false);
         if (botonIniciar) botonIniciar.SetActive(true);
         if (botonSalir) botonSalir.SetActive(true);
 
@@ -67,14 +81,14 @@ public class ControladorMenu : MonoBehaviour
     // --- ESTADOS FINALES (GANAR/PERDER) ---
     public void ActivarPantallaPerder()
     {
-        panelPerder.SetActive(true);
+        if (panelPerder) panelPerder.SetActive(true);
         Time.timeScale = 0f;
         HabilitarRaton();
     }
 
     public void ActivarPantallaGanar()
     {
-        panelGanar.SetActive(true);
+        if (panelGanar) panelGanar.SetActive(true);
         Time.timeScale = 0f;
         HabilitarRaton();
     }
