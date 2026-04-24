@@ -956,9 +956,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 35956460834120803, guid: 641aecc32e590754295bc66600218017, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 993589543329384268, guid: 641aecc32e590754295bc66600218017, type: 3}
       propertyPath: m_Name
       value: CanvasMenu 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 993589543329384268, guid: 641aecc32e590754295bc66600218017, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727255721490721955, guid: 641aecc32e590754295bc66600218017, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022699778205017851, guid: 641aecc32e590754295bc66600218017, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7701371226111302681, guid: 641aecc32e590754295bc66600218017, type: 3}
       propertyPath: m_Pivot.x
@@ -5609,6 +5625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa08dbe79c54bc14a9a8ec1118226ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  pantallaGameOver: {fileID: 2074643005}
   camara: {fileID: 1743058261}
   volume: {fileID: 832575518}
   controlCamara: {fileID: 0}
@@ -6453,6 +6470,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1193025663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2074643005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 35956460834120803, guid: 641aecc32e590754295bc66600218017, type: 3}
+  m_PrefabInstance: {fileID: 229729233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

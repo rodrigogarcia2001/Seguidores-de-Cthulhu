@@ -6,6 +6,9 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
 public class MuerteJugador : MonoBehaviour
 {
+    [Header("UI")]
+    [SerializeField] private GameObject pantallaGameOver;
+
     [Header("Referencias")]
     [SerializeField] private Camera camara;
     [SerializeField] private Volume volume;
@@ -131,6 +134,8 @@ public class MuerteJugador : MonoBehaviour
 
         // acá podés hacer game over o reiniciar
         Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(1.5f);
+        pantallaGameOver.SetActive(true);
     }
 
     IEnumerator BajarAudio()
