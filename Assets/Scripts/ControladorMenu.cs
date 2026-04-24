@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class ControladorMenu : MonoBehaviour
 {
-    // Esto permite que otros scripts lo encuentren fácilmente (Singleton)
     public static ControladorMenu instancia;
 
     [Header("Paneles (UI)")]
@@ -14,21 +14,50 @@ public class ControladorMenu : MonoBehaviour
     [Header("Botones Menú Principal")]
     public GameObject botonIniciar;
     public GameObject botonSalir;
+    public GameObject fondoAzul; // variable para apagar el fondo
+
+    [Header("Sonido del Compañero")]
+    public AudioController audioController;
+    public AudioClip musicaParaMenu;
 
     private bool estaPausado = false;
 
     void Awake()
     {
-        // Configuramos la instancia al iniciar
         if (instancia == null) instancia = this;
+    }
+
+    void Start()
+    {
+        // 1. RECUPERAR VOLUMEN no funciona
+        AudioListener.volume = 1f;
+
+        // 2. BUSCAR AUDIO: Si el hueco está vacío, lo busca solo en la escena
+        if (audioController == null)
+        {
+            audioController = Object.FindFirstObjectByType<AudioController>();
+        }
+
+        // 3. REPRODUCIR MÚSICA
+        if (audioController != null && musicaParaMenu != null)
+        {
+            audioController.PlaySound(musicaParaMenu, true);
+        }
+
+        // 4. LIMPIEZA DE INTERFAZ
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            if (botonIniciar) botonIniciar.SetActive(false);
+            if (botonSalir) botonSalir.SetActive(false);
+            if (fondoAzul) fondoAzul.SetActive(false);
+        }
     }
 
     void Update()
     {
-        // Solo permitimos usar la P si NO están activos los paneles de Ganar o Perder
-        if (Input.GetKeyDown(KeyCode.P))
+        //forma de detectar la tecla P sin errores
+        if (Keyboard.current != null && Keyboard.current.pKey.wasPressedThisFrame)
         {
-            // Verificamos que los paneles existan antes de preguntar si están activos
             if ((panelPerder != null && panelPerder.activeSelf) || (panelGanar != null && panelGanar.activeSelf))
                 return;
 
@@ -37,11 +66,13 @@ public class ControladorMenu : MonoBehaviour
         }
     }
 
-    // --- NAVEGACIÓN BÁSICA ---
     public void EmpezarJuego()
     {
+        Debug.Log("¡BOTÓN PRESIONADO! Intentando cargar escena por índice...");
+        if (audioController != null) audioController.FadeOut(1.5f);
         Time.timeScale = 1f;
-        SceneManager.LoadScene("EscenaJuego"); // Cambiar al nombre real de la escena
+
+        SceneManager.LoadScene(1);
     }
 
     public void IrAlMenuPrincipal()
@@ -52,33 +83,55 @@ public class ControladorMenu : MonoBehaviour
 
     public void SalirDelJuego()
     {
-        Debug.Log("Saliendo del juego...");
         Application.Quit();
     }
 
-    // --- SISTEMA DE PAUSA ---
     public void Pausar()
     {
         if (panelPausa) panelPausa.SetActive(true);
-        if (botonIniciar) botonIniciar.SetActive(false);
-        if (botonSalir) botonSalir.SetActive(false);
+
+        AudioListener.volume = 1f;
+
+        if (audioController != null)
+        {
+            // 1. Prender el objeto a la fuerza, no funciona
+            audioController.gameObject.SetActive(true);
+
+            AudioSource fuente = audioController.GetComponent<AudioSource>();
+            if (fuente != null)
+            {
+                // 2. ACTIVAR EL COMPONENTE 
+                fuente.enabled = true;
+
+                // 3. Ignorar la pausa del tiempo
+                fuente.ignoreListenerPause = true;
+                fuente.volume = 1f;
+
+                // 4. Reproducir
+                fuente.PlayOneShot(musicaParaMenu);
+            }
+        }
 
         Time.timeScale = 0f;
         estaPausado = true;
-        HabilitarRaton(); // Útil para poder hacer clic en la pausa
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void Reanudar()
     {
         if (panelPausa) panelPausa.SetActive(false);
-        if (botonIniciar) botonIniciar.SetActive(true);
-        if (botonSalir) botonSalir.SetActive(true);
-
         Time.timeScale = 1f;
         estaPausado = false;
+
+        // Detenemos la música del menú al volver a jugar
+        if (audioController != null) audioController.FadeOut(0.5f);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
-    // --- ESTADOS FINALES (GANAR/PERDER) ---
     public void ActivarPantallaPerder()
     {
         if (panelPerder) panelPerder.SetActive(true);
