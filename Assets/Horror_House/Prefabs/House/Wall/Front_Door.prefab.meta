@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 65537cd4271f32a449664281e7d39f24
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Prefabs/House/Wall/Front_Door.prefab
+  uploadId: 620059

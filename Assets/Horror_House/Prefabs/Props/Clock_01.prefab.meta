@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e8a9fb38737b75e4ebc015caf3367285
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Prefabs/Props/Clock_01.prefab
+  uploadId: 620059

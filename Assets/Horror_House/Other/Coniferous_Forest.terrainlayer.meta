@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1feceaf619131c34ea4240548f30ef0f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 8574412962073106934
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Other/Coniferous_Forest.terrainlayer
+  uploadId: 620059

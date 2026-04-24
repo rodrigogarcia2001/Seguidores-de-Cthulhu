@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5079fafbe62d1a142a1a5bac3ab29ced
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Prefabs/Props/Switch_01.prefab
+  uploadId: 620059

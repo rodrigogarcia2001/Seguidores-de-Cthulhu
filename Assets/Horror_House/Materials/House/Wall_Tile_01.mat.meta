@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: da202bbcf37a7c243acc3f4da3fa337d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Materials/House/Wall_Tile_01.mat
+  uploadId: 620059

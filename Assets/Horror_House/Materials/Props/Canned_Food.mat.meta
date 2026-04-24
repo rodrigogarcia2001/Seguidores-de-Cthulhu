@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a369fb6c66a1d6d4c896e8be19728636
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Materials/Props/Canned_Food.mat
+  uploadId: 620059

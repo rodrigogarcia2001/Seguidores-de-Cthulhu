@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e230aace8911f8748a8d79070d606bde
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Materials/House/Floor.mat
+  uploadId: 620059

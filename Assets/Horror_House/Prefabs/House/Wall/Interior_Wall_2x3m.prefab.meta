@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e388ba5d3126a4346a238a40f4aa76cf
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Prefabs/House/Wall/Interior_Wall_2x3m.prefab
+  uploadId: 620059

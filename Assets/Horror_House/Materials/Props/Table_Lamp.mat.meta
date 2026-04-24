@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 632f45fda2578814ba033bd7c2eefa46
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Materials/Props/Table_Lamp.mat
+  uploadId: 620059
