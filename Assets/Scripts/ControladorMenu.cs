@@ -65,14 +65,16 @@ public class ControladorMenu : MonoBehaviour
             else Pausar();
         }
     }
-
+    // En ControladorMenu.cs
     public void EmpezarJuego()
     {
-        Debug.Log("¡BOTÓN PRESIONADO! Intentando cargar escena por índice...");
+        Debug.Log("Iniciando nueva partida...");
+        
+        CheckpointManager.ResetearCheckpoints(); // Reiniciamos el sistema de checkpoints para la nueva partida
+
         if (audioController != null) audioController.FadeOut(1.5f);
         Time.timeScale = 1f;
-
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1); // Carga el nivel 1 desde cero
     }
 
     public void IrAlMenuPrincipal()
@@ -150,6 +152,19 @@ public class ControladorMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ReintentarDesdeCheckpoint()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ReiniciarJuegoCompleto()
+    {
+        Time.timeScale = 1f;
+        CheckpointManager.ResetearCheckpoints();
+        SceneManager.LoadScene(1);
     }
 
     private void HabilitarRaton()
