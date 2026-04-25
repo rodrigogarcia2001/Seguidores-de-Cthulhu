@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 07dc48662f4e9674593e03dbe07bd807
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Materials/House/Porch.mat
+  uploadId: 620059

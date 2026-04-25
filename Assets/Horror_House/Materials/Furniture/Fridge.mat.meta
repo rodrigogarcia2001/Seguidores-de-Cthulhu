@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ae188dd667809bd4c88b093e6023644a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Materials/Furniture/Fridge.mat
+  uploadId: 620059

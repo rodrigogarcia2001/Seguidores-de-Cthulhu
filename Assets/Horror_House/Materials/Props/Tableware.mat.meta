@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 55c8953974a70ca48a256b470bef611a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Materials/Props/Tableware.mat
+  uploadId: 620059

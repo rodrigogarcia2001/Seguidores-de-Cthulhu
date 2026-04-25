@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1f2873e210ab0384c9bdd9af66975e06
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Materials/House/Window.mat
+  uploadId: 620059

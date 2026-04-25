@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 72c2bfc66e959314ab5affe83cd16ab4
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Prefabs/Props/Kitchen/Toaster.prefab
+  uploadId: 620059

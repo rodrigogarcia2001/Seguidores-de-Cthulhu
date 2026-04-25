@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7214bd5c1100a7b4e94f731c7871f3a7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Materials/House/Wall_01.mat
+  uploadId: 620059

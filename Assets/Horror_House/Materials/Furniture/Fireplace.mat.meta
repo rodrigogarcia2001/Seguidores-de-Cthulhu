@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1b686e399c958524399afc3f438cea8d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 201322
+  packageName: Horror House
+  packageVersion: 1.3
+  assetPath: Assets/Horror_House/Materials/Furniture/Fireplace.mat
+  uploadId: 620059
