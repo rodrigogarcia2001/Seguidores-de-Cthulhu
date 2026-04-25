@@ -16,19 +16,19 @@ public class EfectosCordura : MonoBehaviour
 
     [Header("Sonidos locura (<=50%)")]
     [SerializeField] private AudioClip[] sonidosLocura;
-    [SerializeField] private float intervaloMin = 5f;
-    [SerializeField] private float intervaloMax = 10f;
+    [SerializeField] private float intervaloMin = 0.5f;   // antes 5
+    [SerializeField] private float intervaloMax = 2f;     // antes 10
 
     private bool en25 = false;
     [SerializeField] private float volumenMax = 1f;
     private bool empezandoMuerte = false;
     private float timerMuerte = 0f;
     private float volumenAlMorir;
-    [SerializeField] private float delayAntesFade = 1f;
-    [SerializeField] private float velocidadFade = 1.5f;
+    [SerializeField] private float delayAntesFade = 0.2f; // antes 1
+    [SerializeField] private float velocidadFade = 4f;    // antes 1.5
 
     private float intensidadLocura = 0f;
-    [SerializeField] private float velocidadEntrada = 0.5f;
+    [SerializeField] private float velocidadEntrada = 3f; // antes 0.5
     void Start()
     {
         // respiración
