@@ -39,9 +39,12 @@ public class ControladorMenu : MonoBehaviour
         }
 
         // 3. REPRODUCIR MÚSICA
-        if (audioController != null && musicaParaMenu != null)
+        if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            audioController.PlaySound(musicaParaMenu, true);
+            if (audioController != null && musicaParaMenu != null)
+            {
+                audioController.PlaySound(musicaParaMenu, true);
+            }
         }
 
         // 4. LIMPIEZA DE INTERFAZ
