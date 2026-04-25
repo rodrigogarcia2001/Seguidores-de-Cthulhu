@@ -5,7 +5,7 @@ public class ItemPickup : MonoBehaviour
     public Item item;
     public InventorySystem inventory;
 
-    private bool playerInRange = false;
+    public bool playerInRange = false;
 
     private void Update()
     {
@@ -13,7 +13,7 @@ public class ItemPickup : MonoBehaviour
         {
             if(inventory.AddItem(item))
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
         }    
     }

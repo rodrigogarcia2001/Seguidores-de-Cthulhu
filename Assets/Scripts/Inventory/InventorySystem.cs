@@ -20,4 +20,11 @@ public class InventorySystem : MonoBehaviour
         onInventoryChanged?.Invoke(); 
         return true;
     }
+
+    // AGREGADO
+    public void RemoveItem(int index)
+    {
+        items.RemoveAt(index);
+        onInventoryChanged?.Invoke(); //
+    }
 }
