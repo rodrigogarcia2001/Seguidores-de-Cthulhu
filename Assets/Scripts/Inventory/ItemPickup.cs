@@ -20,6 +20,7 @@ public class ItemPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("TRIGGER DETECTADO con: " + other.name);
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
