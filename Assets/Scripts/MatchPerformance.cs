@@ -1,29 +1,40 @@
 using UnityEngine;
 using System.Collections;
 
-public class MatchPerformance : MonoBehaviour
+public class MatchPerformance : MonoBehaviour, IUsable
 {
-    public SistemaCordura sistemaCordura;
+    public float duracion = 3f;
 
-    public void Use()
+    private SistemaCordura sistemaCordura;
+    private bool usado = false;
+
+    public void Use(GameObject player)
     {
+        if (usado) return;
+
+        sistemaCordura = player.GetComponent<SistemaCordura>();
+
         if (sistemaCordura == null)
         {
-            Debug.LogError("SistemaCordura no asignado");
             return;
         }
 
-        sistemaCordura.StartCoroutine(Effect());
+        usado = true;
+
+        StartCoroutine(Fosforo());
     }
 
-    IEnumerator Effect()
+    private IEnumerator Fosforo()
     {
-        sistemaCordura.EntrarEnLuz();
-        Debug.Log("USADO FOSFORO");
+        Debug.Log("CORRUTINA INICIADA");
 
-        yield return new WaitForSeconds(0.5f);
+        sistemaCordura.EntrarEnLuz();
+
+        yield return new WaitForSeconds(duracion);
 
         sistemaCordura.SalirDeLuz();
-        //Destroy(gameObject);
+
+        Debug.Log("CORRUTINA TERMINADA");
+        Destroy(gameObject);
     }
 }
