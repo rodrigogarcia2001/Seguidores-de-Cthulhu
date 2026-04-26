@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MatchPerformance : MonoBehaviour, IUsable
 {
-    public float duracion = 3f;
+    public float duracion = 6f;
 
     private SistemaCordura sistemaCordura;
     private bool usado = false;

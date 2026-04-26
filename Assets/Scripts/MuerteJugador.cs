@@ -34,10 +34,10 @@ public class MuerteJugador : MonoBehaviour
     }
     void Update()
     {
-        if (Keyboard.current.kKey.wasPressedThisFrame)
-        {
-            Morir();
-        }
+        //if (Keyboard.current.kKey.wasPressedThisFrame)
+        //{
+        //    Morir();
+        //}
     }
 
     public void Morir()

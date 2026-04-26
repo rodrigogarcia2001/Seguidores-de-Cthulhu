@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class CheckpointManager : MonoBehaviour
 {
     // La variable estática sobrevive al recargar la escena

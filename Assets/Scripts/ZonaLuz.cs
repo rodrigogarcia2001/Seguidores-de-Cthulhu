@@ -27,10 +27,10 @@ public class ZonaLuz : MonoBehaviour
             }
         }
 
-        if (Keyboard.current.fKey.wasPressedThisFrame)
-        {
-            luz.enabled = !luz.enabled; // toggle
-        }
+        //if (Keyboard.current.fKey.wasPressedThisFrame)
+        //{
+        //    luz.enabled = !luz.enabled; // toggle
+        //}
     }
     private void OnTriggerEnter(Collider other)
     {
