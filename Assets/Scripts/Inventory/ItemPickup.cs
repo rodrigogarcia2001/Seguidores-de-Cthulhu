@@ -13,7 +13,7 @@ public class ItemPickup : MonoBehaviour
         {
             if(inventory.AddItem(item))
             {
-                //Destroy(gameObject);
+                Destroy(gameObject);
             }
         }    
     }

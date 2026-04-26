@@ -21,9 +21,9 @@ public class MatchPerformance : MonoBehaviour
         sistemaCordura.EntrarEnLuz();
         Debug.Log("USADO FOSFORO");
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
 
         sistemaCordura.SalirDeLuz();
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }
