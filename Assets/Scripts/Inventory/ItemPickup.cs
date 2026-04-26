@@ -13,13 +13,14 @@ public class ItemPickup : MonoBehaviour
         {
             if(inventory.AddItem(item))
             {
-                //Destroy(gameObject);
+                Destroy(gameObject);
             }
         }    
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("TRIGGER DETECTADO con: " + other.name);
         if (other.CompareTag("Player"))
         {
             playerInRange = true;

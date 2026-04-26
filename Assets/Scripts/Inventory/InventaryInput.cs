@@ -3,7 +3,7 @@ using UnityEngine;
 public class InventoryInput : MonoBehaviour
 {
     public InventorySystem inventory;
-    public SistemaCordura sistemaCordura; // 
+    public SistemaCordura sistemaCordura;
 
     void Update()
     {
@@ -29,18 +29,24 @@ public class InventoryInput : MonoBehaviour
             return;
         }
 
+        // crear objeto real en escena
         GameObject obj = Instantiate(item.prefab);
 
-        MatchPerformance match = obj.GetComponent<MatchPerformance>();
-
-        if (match == null)
+        foreach (Renderer r in obj.GetComponentsInChildren<Renderer>())
         {
-            Debug.LogError("El prefab no tiene MatchPerformance");
+            r.enabled = false;
+        }
+
+        IUsable usable = obj.GetComponent<IUsable>();
+
+        if (usable == null)
+        {
+            Debug.LogError("El prefab no implementa IUsable");;
             return;
         }
-        match.sistemaCordura = sistemaCordura;
 
-        match.Use();
+        // usarlo con el player
+        usable.Use(gameObject);
 
         inventory.RemoveItem(index);
     }
