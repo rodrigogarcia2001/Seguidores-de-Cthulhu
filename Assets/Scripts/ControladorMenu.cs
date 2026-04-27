@@ -69,6 +69,11 @@ public class ControladorMenu : MonoBehaviour
             if (estaPausado) Reanudar();
             else Pausar();
         }
+
+        if (Keyboard.current.vKey.wasPressedThisFrame)
+        {
+            ReiniciarNivel();
+        }
     }
 
     public void EmpezarJuego()
