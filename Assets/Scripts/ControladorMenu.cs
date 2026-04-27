@@ -14,7 +14,7 @@ public class ControladorMenu : MonoBehaviour
     [Header("Botones Menú Principal")]
     public GameObject botonIniciar;
     public GameObject botonSalir;
-    public GameObject fondoAzul; // variable para apagar el fondo
+    public GameObject fondoAzul;
 
     [Header("Sonido del Compañero")]
     public AudioController audioController;
@@ -29,27 +29,30 @@ public class ControladorMenu : MonoBehaviour
 
     void Start()
     {
-        // 1. RECUPERAR VOLUMEN no funciona
         AudioListener.volume = 1f;
 
-        // 2. BUSCAR AUDIO: Si el hueco está vacío, lo busca solo en la escena
         if (audioController == null)
         {
             audioController = Object.FindFirstObjectByType<AudioController>();
         }
 
-        // 3. REPRODUCIR MÚSICA
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
+            // En el menú principal, aseguramos que el cursor se vea
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
             if (audioController != null && musicaParaMenu != null)
             {
                 audioController.PlaySound(musicaParaMenu, true);
             }
         }
-
-        // 4. LIMPIEZA DE INTERFAZ
-        if (SceneManager.GetActiveScene().buildIndex != 0)
+        else
         {
+            // --- CAMBIO AQUÍ: Bloqueamos el cursor al iniciar cualquier nivel ---
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
             if (botonIniciar) botonIniciar.SetActive(false);
             if (botonSalir) botonSalir.SetActive(false);
             if (fondoAzul) fondoAzul.SetActive(false);
@@ -58,7 +61,6 @@ public class ControladorMenu : MonoBehaviour
 
     void Update()
     {
-        //forma de detectar la tecla P sin errores
         if (Keyboard.current != null && Keyboard.current.pKey.wasPressedThisFrame)
         {
             if ((panelPerder != null && panelPerder.activeSelf) || (panelGanar != null && panelGanar.activeSelf))
@@ -67,22 +69,16 @@ public class ControladorMenu : MonoBehaviour
             if (estaPausado) Reanudar();
             else Pausar();
         }
-
-        if (Keyboard.current.vKey.wasPressedThisFrame)
-        {
-            ReiniciarNivel();
-        }
     }
-    // En ControladorMenu.cs
+
     public void EmpezarJuego()
     {
         Debug.Log("Iniciando nueva partida...");
-        
-        CheckpointManager.ResetearCheckpoints(); // Reiniciamos el sistema de checkpoints para la nueva partida
+        CheckpointManager.ResetearCheckpoints();
 
         if (audioController != null) audioController.FadeOut(1.5f);
         Time.timeScale = 1f;
-        SceneManager.LoadScene(1); // Carga el nivel 1 desde cero
+        SceneManager.LoadScene(1);
     }
 
     public void IrAlMenuPrincipal()
@@ -104,20 +100,13 @@ public class ControladorMenu : MonoBehaviour
 
         if (audioController != null)
         {
-            // 1. Prender el objeto a la fuerza, no funciona
             audioController.gameObject.SetActive(true);
-
             AudioSource fuente = audioController.GetComponent<AudioSource>();
             if (fuente != null)
             {
-                // 2. ACTIVAR EL COMPONENTE 
                 fuente.enabled = true;
-
-                // 3. Ignorar la pausa del tiempo
                 fuente.ignoreListenerPause = true;
                 fuente.volume = 1f;
-
-                // 4. Reproducir
                 fuente.PlayOneShot(musicaParaMenu);
             }
         }
@@ -125,6 +114,7 @@ public class ControladorMenu : MonoBehaviour
         Time.timeScale = 0f;
         estaPausado = true;
 
+        // Liberamos el cursor al pausar
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -135,9 +125,9 @@ public class ControladorMenu : MonoBehaviour
         Time.timeScale = 1f;
         estaPausado = false;
 
-        // Detenemos la música del menú al volver a jugar
         if (audioController != null) audioController.FadeOut(0.5f);
 
+        // --- CAMBIO AQUÍ: Ocultamos el cursor al volver al juego ---
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
