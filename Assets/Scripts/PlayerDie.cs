@@ -4,28 +4,28 @@ using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
-public class MuerteJugador : MonoBehaviour
+public class PlayerDie : MonoBehaviour
 {
     [Header("UI")]
-    [SerializeField] private GameObject pantallaGameOver;
+    [SerializeField] private GameObject screenGameOver;
 
     [Header("Referencias")]
-    [SerializeField] private Camera camara;
+    [SerializeField] private Camera camera;
     [SerializeField] private Volume volume;
-    [SerializeField] private MonoBehaviour controlCamara;
-    [SerializeField] private CanvasGroup fadeNegro;
+    [SerializeField] private MonoBehaviour controlCamera;
+    [SerializeField] private CanvasGroup blackFade;
 
     [Header("Audio")]
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip recuerdoInicial;
-    [SerializeField] private AudioClip[] recuerdos;
-    [SerializeField] private AudioClip pitidoFinal;
-    [SerializeField] private AudioClip latido;
+    [SerializeField] private AudioClip initialMemory;
+    [SerializeField] private AudioClip[] memories;
+    [SerializeField] private AudioClip whistleFinal;
+    [SerializeField] private AudioClip beat;
 
     private Bloom bloom;
     private Vignette vignette;
-    Coroutine recuerdosCoroutine;
-    private bool muerto = false;
+    Coroutine memoriesCoroutine;
+    private bool die = false;
 
     void Start()
     {
@@ -42,50 +42,50 @@ public class MuerteJugador : MonoBehaviour
 
     public void Morir()
     {
-        if (muerto) return;
-        muerto = true;
+        if (die) return;
+        die = true;
 
-        StartCoroutine(SecuenciaMuerte());
+        StartCoroutine(SecuenceOfDeath());
     }
 
-    IEnumerator SecuenciaMuerte()
+    IEnumerator SecuenceOfDeath()
     {
 
-        StartCoroutine(LatidosProgresivos(3.5f));
+        StartCoroutine(ProggresiveBeats(3.5f));
 
         yield return new WaitForSecondsRealtime(3.5f);
         yield return null; // 1 frame
-        StartCoroutine(BajarLatidosSuave());
+        StartCoroutine(ReduceBeatsSmooth());
         //  PRIMER sonido (el importante)
-        StartCoroutine(ReproducirRecuerdoSuave());
+        StartCoroutine(ReproduceMemorySmooth());
         yield return new WaitForSecondsRealtime(0.2f);
-        recuerdosCoroutine = StartCoroutine(ReproducirRecuerdos());
+        memoriesCoroutine = StartCoroutine(ReproduceMemories());
 
 
-        if (controlCamara != null)
-            controlCamara.enabled = false;
+        if (controlCamera != null)
+            controlCamera.enabled = false;
 
         GetComponentInChildren<MonoBehaviour>().enabled = false;//Evita que el jugaodr se mueva
 
-        float tiempo = 0f;
-        float duracion = 3f;
+        float time = 0f;
+        float duration = 3f;
 
         float bloomInicial = bloom.intensity.value;
         float thresholdInicial = bloom.threshold.value;
         float vignetteInicial = vignette.intensity.value;
         float smoothInicial = vignette.smoothness.value;
 
-        Vector3 rotInicial = camara.transform.eulerAngles;
+        Vector3 rotInicial = camera.transform.eulerAngles;
         Vector3 rotFinal = new Vector3(-80f, rotInicial.y, rotInicial.z); // mirar al cielo
 
-        while (tiempo < duracion)
+        while (time < duration)
         {
-            float velocidad = 0.5f;
-            tiempo += Time.deltaTime * velocidad;
-            float t = Mathf.SmoothStep(0f, 1f, tiempo / duracion);
+            float speed = 0.5f;
+            time += Time.deltaTime * speed;
+            float t = Mathf.SmoothStep(0f, 1f, time / duration);
 
             // 1. Rotar cámara hacia arriba
-            camara.transform.eulerAngles = Vector3.Lerp(rotInicial, rotFinal, t);
+            camera.transform.eulerAngles = Vector3.Lerp(rotInicial, rotFinal, t);
 
             // 2. Aumentar bloom
             float tSuave = Mathf.SmoothStep(0f, 1f, t);
@@ -101,33 +101,33 @@ public class MuerteJugador : MonoBehaviour
             yield return null;
         }
 
-        // bajar volumen de recuerdos
-        StartCoroutine(BajarAudio());
+        // bajar volume de memories
+        StartCoroutine(ReduceAudio());
 
         yield return new WaitForSecondsRealtime(1.5f);
-        if (recuerdosCoroutine != null)
+        if (memoriesCoroutine != null)
         {
-            StopCoroutine(recuerdosCoroutine);
+            StopCoroutine(memoriesCoroutine);
         }
         // sonido final
         audioSource.Stop();
         audioSource.volume = 1f;
-        audioSource.clip = pitidoFinal;
+        audioSource.clip = whistleFinal;
         audioSource.loop = false;
         audioSource.Play();
 
         // cerrar completamente la visión
         float t2 = 0f;
-        float duracionFinal = 4f;
-        while (t2 < duracionFinal)
+        float durationFinal = 4f;
+        while (t2 < durationFinal)
         {
             t2 += Time.deltaTime;
-            float tFade = t2 / duracionFinal;
+            float tFade = t2 / durationFinal;
 
             vignette.intensity.value = Mathf.Lerp(0.6f, 1f, tFade);
             vignette.smoothness.value = Mathf.Lerp(0.9f, 1f, tFade);
 
-            fadeNegro.alpha = Mathf.Lerp(0f, 1f, tFade); // negro total
+            blackFade.alpha = Mathf.Lerp(0f, 1f, tFade); // negro total
 
             yield return null;
         }
@@ -135,95 +135,95 @@ public class MuerteJugador : MonoBehaviour
         // acá podés hacer game over o reiniciar
         Time.timeScale = 0f;
         yield return new WaitForSecondsRealtime(1.5f);
-        pantallaGameOver.SetActive(true);
+        screenGameOver.SetActive(true);
     }
 
-    IEnumerator BajarAudio()
+    IEnumerator ReduceAudio()
     {
         float t = 0f;
-        float duracion = 1.5f;
-        float volumenInicial = audioSource.volume;
+        float duration = 1.5f;
+        float volumeInitial = audioSource.volume;
 
-        while (t < duracion)
+        while (t < duration)
         {
             t += Time.deltaTime;
-            audioSource.volume = Mathf.Lerp(volumenInicial, 0f, t / duracion);
+            audioSource.volume = Mathf.Lerp(volumeInitial, 0f, t / duration);
             yield return null;
         }
     }
 
-    IEnumerator ReproducirRecuerdos()
+    IEnumerator ReproduceMemories()
     {
         yield return new WaitForSecondsRealtime(3f);
 
-        for (int i = 0; i < recuerdos.Length; i++)
+        for (int i = 0; i < memories.Length; i++)
         {
-            AudioClip clip = recuerdos[i];
+            AudioClip clip = memories[i];
 
-            float progreso = i / (float)recuerdos.Length;
-            float volumen = Mathf.Lerp(0.05f, 0.7f, progreso);
+            float progress = i / (float)memories.Length;
+            float volume = Mathf.Lerp(0.05f, 0.7f, progress);
 
-            audioSource.PlayOneShot(clip, volumen);
+            audioSource.PlayOneShot(clip, volume);
 
             yield return new WaitForSecondsRealtime(Random.Range(0.1f, 1.5f));
         }
     }
 
-    IEnumerator LatidosProgresivos(float duracion)
+    IEnumerator ProggresiveBeats(float duration)
     {
-        float tiempo = 0f;
+        float time = 0f;
 
-        while (tiempo < duracion)
+        while (time < duration)
         {
-            float t = Mathf.Pow(tiempo / duracion, 2.5f);
+            float t = Mathf.Pow(time / duration, 2.5f);
 
             // cada vez más rápido
-            float intervalo = Mathf.Lerp(1.1f, 0.4f, t);
-            intervalo += Random.Range(-0.02f, 0.02f);
+            float interval = Mathf.Lerp(1.1f, 0.4f, t);
+            interval += Random.Range(-0.02f, 0.02f);
 
             // más fuerte hacia el final
-            float volumen = Mathf.Lerp(0.15f, 0.6f, t); ;
+            float volume = Mathf.Lerp(0.15f, 0.6f, t); ;
 
-            // un poco más agudo/desesperado
+            // un poco más agudo/deswaitdo
             float pitch = Mathf.Lerp(0.9f, 1.05f, t);
 
             audioSource.pitch = pitch;
-            audioSource.PlayOneShot(latido, volumen);
+            audioSource.PlayOneShot(beat, volume);
 
-            yield return new WaitForSecondsRealtime(intervalo);
+            yield return new WaitForSecondsRealtime(interval);
 
-            tiempo += intervalo;
+            time += interval;
         }
         yield return new WaitForSecondsRealtime(0.2f);
         audioSource.pitch = 1f; // reset
     }
 
-    IEnumerator ReproducirRecuerdoSuave()
+    IEnumerator ReproduceMemorySmooth()
     {
         float t = 0f;
-        float duracion = 0.5f;
+        float duration = 0.5f;
 
         audioSource.volume = 0f;
-        audioSource.PlayOneShot(recuerdoInicial);
+        audioSource.PlayOneShot(initialMemory);
 
-        while (t < duracion)
+        while (t < duration)
         {
             t += Time.unscaledDeltaTime;
-            audioSource.volume = Mathf.Lerp(0f, 0.6f, t / duracion);
+            audioSource.volume = Mathf.Lerp(0f, 0.6f, t / duration);
             yield return null;
         }
     }
 
-    IEnumerator BajarLatidosSuave()
+    IEnumerator ReduceBeatsSmooth()
     {
         float t = 0f;
-        float duracion = 1f;
+        float duration = 1f;
         float pitchInicial = audioSource.pitch;
 
-        while (t < duracion)
+        while (t < duration)
         {
             t += Time.unscaledDeltaTime;
-            audioSource.pitch = Mathf.Lerp(pitchInicial, 0.8f, t / duracion);
+            audioSource.pitch = Mathf.Lerp(pitchInicial, 0.8f, t / duration);
             yield return null;
         }
     }

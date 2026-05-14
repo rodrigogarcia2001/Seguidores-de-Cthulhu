@@ -2,29 +2,29 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
-public class ControladorMenu : MonoBehaviour
+public class MenuController : MonoBehaviour
 {
-    public static ControladorMenu instancia;
+    public static MenuController instance;
 
-    [Header("Paneles (UI)")]
-    public GameObject panelPausa;
-    public GameObject panelPerder;
-    public GameObject panelGanar;
+    [Header("Panels (UI)")]
+    public GameObject panelPause;
+    public GameObject panelLose;
+    public GameObject panelWin;
 
-    [Header("Botones Menú Principal")]
-    public GameObject botonIniciar;
-    public GameObject botonSalir;
-    public GameObject fondoAzul;
+    [Header("Button Main Menu")]
+    public GameObject buttonStart;
+    public GameObject buttonExit;
+    public GameObject bottomBlue;
 
-    [Header("Sonido del Compañero")]
+    [Header("Sound of Teammate")]
     public AudioController audioController;
-    public AudioClip musicaParaMenu;
+    public AudioClip musicForMenu;
 
-    private bool estaPausado = false;
+    private bool isPause = false;
 
     void Awake()
     {
-        if (instancia == null) instancia = this;
+        if (instance == null) instance = this;
     }
 
     void Start()
@@ -42,9 +42,9 @@ public class ControladorMenu : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
-            if (audioController != null && musicaParaMenu != null)
+            if (audioController != null && musicForMenu != null)
             {
-                audioController.PlaySound(musicaParaMenu, true);
+                audioController.PlaySound(musicForMenu, true);
             }
         }
         else
@@ -53,9 +53,9 @@ public class ControladorMenu : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
-            if (botonIniciar) botonIniciar.SetActive(false);
-            if (botonSalir) botonSalir.SetActive(false);
-            if (fondoAzul) fondoAzul.SetActive(false);
+            if (buttonStart) buttonStart.SetActive(false);
+            if (buttonExit) buttonExit.SetActive(false);
+            if (bottomBlue) bottomBlue.SetActive(false);
         }
     }
 
@@ -63,43 +63,43 @@ public class ControladorMenu : MonoBehaviour
     {
         if (Keyboard.current != null && Keyboard.current.pKey.wasPressedThisFrame)
         {
-            if ((panelPerder != null && panelPerder.activeSelf) || (panelGanar != null && panelGanar.activeSelf))
+            if ((panelLose != null && panelLose.activeSelf) || (panelWin != null && panelWin.activeSelf))
                 return;
 
-            if (estaPausado) Reanudar();
-            else Pausar();
+            if (isPause) Resume();
+            else Pause();
         }
 
         if (Keyboard.current.vKey.wasPressedThisFrame)
         {
-            ReiniciarNivel();
+            RestartLevel();
         }
     }
 
-    public void EmpezarJuego()
+    public void StartGame()
     {
         Debug.Log("Iniciando nueva partida...");
-        CheckpointManager.ResetearCheckpoints();
+        CheckpointManager.ResetChekpoints();
 
         if (audioController != null) audioController.FadeOut(1.5f);
         Time.timeScale = 1f;
         SceneManager.LoadScene(1);
     }
 
-    public void IrAlMenuPrincipal()
+    public void GoToMainMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void SalirDelJuego()
+    public void ExitGame()
     {
         Application.Quit();
     }
 
-    public void Pausar()
+    public void Pause()
     {
-        if (panelPausa) panelPausa.SetActive(true);
+        if (panelPause) panelPause.SetActive(true);
 
         AudioListener.volume = 1f;
 
@@ -112,23 +112,23 @@ public class ControladorMenu : MonoBehaviour
                 fuente.enabled = true;
                 fuente.ignoreListenerPause = true;
                 fuente.volume = 1f;
-                fuente.PlayOneShot(musicaParaMenu);
+                fuente.PlayOneShot(musicForMenu);
             }
         }
 
         Time.timeScale = 0f;
-        estaPausado = true;
+        isPause = true;
 
         // Liberamos el cursor al pausar
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 
-    public void Reanudar()
+    public void Resume()
     {
-        if (panelPausa) panelPausa.SetActive(false);
+        if (panelPause) panelPause.SetActive(false);
         Time.timeScale = 1f;
-        estaPausado = false;
+        isPause = false;
 
         if (audioController != null) audioController.FadeOut(0.5f);
 
@@ -137,40 +137,40 @@ public class ControladorMenu : MonoBehaviour
         Cursor.visible = false;
     }
 
-    public void ActivarPantallaPerder()
+    public void ActiveScreenLose()
     {
-        if (panelPerder) panelPerder.SetActive(true);
+        if (panelLose) panelLose.SetActive(true);
         Time.timeScale = 0f;
-        HabilitarRaton();
+        EnableMouse();
     }
 
-    public void ActivarPantallaGanar()
+    public void ActiveScreenWin()
     {
-        if (panelGanar) panelGanar.SetActive(true);
+        if (panelWin) panelWin.SetActive(true);
         Time.timeScale = 0f;
-        HabilitarRaton();
+        EnableMouse();
     }
 
-    public void ReiniciarNivel()
+    public void RestartLevel()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void ReintentarDesdeCheckpoint()
+    public void RetryFromChekpoint()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void ReiniciarJuegoCompleto()
+    public void RestartFullGame()
     {
         Time.timeScale = 1f;
-        CheckpointManager.ResetearCheckpoints();
+        CheckpointManager.ResetChekpoints();
         SceneManager.LoadScene(1);
     }
 
-    private void HabilitarRaton()
+    private void EnableMouse()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

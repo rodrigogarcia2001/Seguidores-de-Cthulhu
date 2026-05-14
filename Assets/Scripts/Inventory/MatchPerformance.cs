@@ -3,36 +3,36 @@ using System.Collections;
 
 public class MatchPerformance : MonoBehaviour, IUsable
 {
-    public float duracion = 6f;
+    public float duration = 6f;
 
-    private SistemaCordura sistemaCordura;
-    private bool usado = false;
+    private SanitySystem sanitySystem;
+    private bool used = false;
 
     public void Use(GameObject player)
     {
-        if (usado) return;
+        if (used) return;
 
-        sistemaCordura = player.GetComponent<SistemaCordura>();
+        sanitySystem = player.GetComponent<SanitySystem>();
 
-        if (sistemaCordura == null)
+        if (sanitySystem == null)
         {
             return;
         }
 
-        usado = true;
+        used = true;
 
-        StartCoroutine(Fosforo());
+        StartCoroutine(Match());
     }
 
-    private IEnumerator Fosforo()
+    private IEnumerator Match()
     {
         Debug.Log("CORRUTINA INICIADA");
 
-        sistemaCordura.EntrarEnLuz();
+        sanitySystem.ComeInLight();
 
-        yield return new WaitForSeconds(duracion);
+        yield return new WaitForSeconds(duration);
 
-        sistemaCordura.SalirDeLuz();
+        sanitySystem.OutOfLight();
 
         Debug.Log("CORRUTINA TERMINADA");
         Destroy(gameObject);

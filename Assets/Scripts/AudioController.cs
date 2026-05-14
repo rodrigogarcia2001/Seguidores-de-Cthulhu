@@ -27,20 +27,20 @@ public class AudioController : MonoBehaviour
     }
 
     // Bajar volumen progresivamente
-    public void FadeOut(float tiempo)
+    public void FadeOut(float time)
     {
-        StartCoroutine(FadeOutRutina(tiempo));
+        StartCoroutine(FadeOutRoutine(time));
     }
 
-    IEnumerator FadeOutRutina(float tiempo)
+    IEnumerator FadeOutRoutine(float time)
     {
-        float volumenInicial = source.volume;
+        float volumeInitial = source.volume;
         float t = 0f;
 
-        while (t < tiempo)
+        while (t < time)
         {
             t += Time.deltaTime;
-            source.volume = Mathf.Lerp(volumenInicial, 0f, t / tiempo);
+            source.volume = Mathf.Lerp(volumeInitial, 0f, t / time);
             yield return null;
         }
 

@@ -3,17 +3,17 @@ using UnityEngine;
 public class InventoryInput : MonoBehaviour
 {
     public InventorySystem inventory;
-    public SistemaCordura sistemaCordura;
+    public SanitySystem sanitySistem;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            UsarItem(0);
+            UseItem(0);
         }
     }
 
-    void UsarItem(int index)
+    void UseItem(int index)
     {
         if (index >= inventory.items.Count)
         {

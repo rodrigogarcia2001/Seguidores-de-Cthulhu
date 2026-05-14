@@ -3,43 +3,43 @@ using System.Collections;
 
 public class Medbox : MonoBehaviour, IUsable
 {
-    [SerializeField] private float aumento = 5f;
-    [SerializeField] private float duracion = 3f;
+    [SerializeField] private float increase = 5f;
+    [SerializeField] private float duration = 3f;
 
-    private Light[] lucesOriginales;
-    private float[] rangosOriginales;
+    private Light[] originalLights;
+    private float[] originalRanges;
 
     public void Use(GameObject player)
     {
-        StartCoroutine(ExpandirLuces());
-        StartCoroutine(DestruirLuego());
+        StartCoroutine(ExpandLights());
+        StartCoroutine(DestroyLater());
     }
 
-    private IEnumerator ExpandirLuces()
+    private IEnumerator ExpandLights()
     {
-        lucesOriginales = FindObjectsOfType<Light>();
-        rangosOriginales = new float[lucesOriginales.Length];
+        originalLights = FindObjectsOfType<Light>();
+        originalRanges = new float[originalLights.Length];
 
         // guardar y aumentar
-        for (int i = 0; i < lucesOriginales.Length; i++)
+        for (int i = 0; i < originalLights.Length; i++)
         {
-            rangosOriginales[i] = lucesOriginales[i].range;
-            lucesOriginales[i].range += aumento;
+            originalRanges[i] = originalLights[i].range;
+            originalLights[i].range += increase;
         }
 
-        yield return new WaitForSeconds(duracion);
+        yield return new WaitForSeconds(duration);
 
         // restaurar
-        for (int i = 0; i < lucesOriginales.Length; i++)
+        for (int i = 0; i < originalLights.Length; i++)
         {
-            if (lucesOriginales[i] != null)
-                lucesOriginales[i].range = rangosOriginales[i];
+            if (originalLights[i] != null)
+                originalLights[i].range = originalRanges[i];
         }
     }
 
-    private IEnumerator DestruirLuego()
+    private IEnumerator DestroyLater()
     {
-        yield return new WaitForSeconds(duracion);
+        yield return new WaitForSeconds(duration);
         Destroy(gameObject);
     }
 }

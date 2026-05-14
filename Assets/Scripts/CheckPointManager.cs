@@ -3,30 +3,30 @@ using UnityEngine.InputSystem;
 public class CheckpointManager : MonoBehaviour
 {
     // La variable estática sobrevive al recargar la escena
-    public static Vector3 posicionGuardada = Vector3.zero;
-    public static bool hayCheckpoint = false;
+    public static Vector3 savePosition = Vector3.zero;
+    public static bool haveChekpoint = false;
 
     private void Start()
     {
-        if (hayCheckpoint && posicionGuardada != Vector3.zero)
+        if (haveChekpoint && savePosition != Vector3.zero)
         {
-            GameObject jugador = GameObject.FindGameObjectWithTag("Player");
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-            if (jugador != null)
+            if (player != null)
             {
-                CharacterController cc = jugador.GetComponent<CharacterController>();
+                CharacterController cc = player.GetComponent<CharacterController>();
 
                 if (cc != null)
                 {
                     cc.enabled = false; // Desactivamos la física del controlador
 
-                    jugador.transform.position = posicionGuardada;
+                    player.transform.position = savePosition;
                     cc.enabled = true; // Reactivamos la física
-                    Debug.Log("Teletransportando jugador al checkpoint: " + posicionGuardada);
+                    Debug.Log("Teletransportando player al checkpoint: " + savePosition);
                 }
                 else
                 {
-                    jugador.transform.position = posicionGuardada;
+                    player.transform.position = savePosition;
                 }
             }
             else
@@ -36,17 +36,17 @@ public class CheckpointManager : MonoBehaviour
         }
     }
 
-    public static void GuardarPunto(Vector3 nuevaPosicion)
+    public static void SavePoint(Vector3 newPosition)
     {
-        posicionGuardada = nuevaPosicion;
-        hayCheckpoint = true;
+        savePosition = newPosition;
+        haveChekpoint = true;
         Debug.Log("¡Checkpoint guardado!");
     }
 
-    public static void ResetearCheckpoints()
+    public static void ResetChekpoints()
     {
-        posicionGuardada = Vector3.zero;
-        hayCheckpoint = false;
+        savePosition = Vector3.zero;
+        haveChekpoint = false;
         Debug.Log("Sistema de Checkpoints reiniciado para una nueva partida.");
     }
 }
