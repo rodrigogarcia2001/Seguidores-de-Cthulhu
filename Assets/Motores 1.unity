@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 1633373126}
+  light: {fileID: 0}
 --- !u!135 &3391693
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -852,7 +852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 1421227258}
+  light: {fileID: 0}
 --- !u!135 &11176533
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1077,11 +1077,6 @@ MeshFilter:
 --- !u!1 &20210047 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7507523132233847018, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1530721709}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &20210048 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
   m_PrefabInstance: {fileID: 1530721709}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &20210049
@@ -1911,11 +1906,6 @@ Transform:
 --- !u!1 &62088704 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1364078614666478692, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
-  m_PrefabInstance: {fileID: 617306852}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &62088705 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 7813663425045420209, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
   m_PrefabInstance: {fileID: 617306852}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &62088706
@@ -4914,11 +4904,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &162752099 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 6637052621915433607, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1131315057}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &166401410
 GameObject:
   m_ObjectHideFlags: 0
@@ -5792,11 +5777,6 @@ MeshFilter:
 --- !u!1 &184143659 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7507523132233847018, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 839107793}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &184143660 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
   m_PrefabInstance: {fileID: 839107793}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &184143661
@@ -6929,6 +6909,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9099713157331086827, guid: 641aecc32e590754295bc66600218017, type: 3}
+      propertyPath: panelWin
+      value: 
+      objectReference: {fileID: 2002527153}
+    - target: {fileID: 9099713157331086827, guid: 641aecc32e590754295bc66600218017, type: 3}
+      propertyPath: panelLose
+      value: 
+      objectReference: {fileID: 442849690}
+    - target: {fileID: 9099713157331086827, guid: 641aecc32e590754295bc66600218017, type: 3}
+      propertyPath: panelPause
+      value: 
+      objectReference: {fileID: 2101666508}
+    - target: {fileID: 9099713157331086827, guid: 641aecc32e590754295bc66600218017, type: 3}
       propertyPath: audioController
       value: 
       objectReference: {fileID: 104126380}
@@ -7484,7 +7476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37dab817754dfc840884193186d56f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MatchPerformance
-  duracion: 6
+  duration: 6
 --- !u!1001 &262891166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7694,11 +7686,6 @@ Transform:
 --- !u!1 &270256952 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7507523132233847018, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 2120097026}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &270256953 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
   m_PrefabInstance: {fileID: 2120097026}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &270256954
@@ -8660,11 +8647,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &289936758 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 8565929468525460022, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 291823560}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &291823560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9940,18 +9922,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b6f6dcf88538943a2a9a4e0607566c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FocoRoto
-  luces:
-  - {fileID: 474055231}
-  - {fileID: 1937531558}
-  - {fileID: 1751617518}
-  - {fileID: 356783704}
-  intensidadNormal: 30
-  duracionParpadeo: 2
-  intervaloMin: 0.05
-  intervaloMax: 0.2
+  lights: []
+  intensityNormal: 30
+  durationBlinking: 2
+  intervalMin: 0.05
+  intervalMax: 0.2
   audioSource: {fileID: 325003100}
-  clipElectricidad: {fileID: 8300000, guid: 21e41b4a3b66b53478ce797d89281478, type: 3}
-  clipRuptura: {fileID: 8300000, guid: b74f0cfd7f68f884e981a080c3ba6730, type: 3}
+  electricityClip: {fileID: 0}
+  clipBreakdown: {fileID: 0}
 --- !u!1 &325800145
 GameObject:
   m_ObjectHideFlags: 0
@@ -10771,11 +10749,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &345890063 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 6637052621915433607, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1729040578}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &348122727
 GameObject:
   m_ObjectHideFlags: 0
@@ -10925,7 +10898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 474055231}
+  light: {fileID: 0}
 --- !u!135 &352440375
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10992,11 +10965,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470167d4640f4944ab6717e0afa8aae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerFocos
-  focos:
-  - {fileID: 1333148275}
-  - {fileID: 2115656216}
-  cantidadARomper: 2
-  delayEntreFocos: 0.2
+  spotlights: []
+  amountToBroken: 2
+  delayBetweenSpotlights: 0.2
 --- !u!65 &353974128
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11091,11 +11062,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &356783704 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 8565929468525460022, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1470996571}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &359198939
 GameObject:
   m_ObjectHideFlags: 0
@@ -13270,11 +13236,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7507523132233847018, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
   m_PrefabInstance: {fileID: 291823560}
   m_PrefabAsset: {fileID: 0}
---- !u!108 &425245971 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 291823560}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &425245972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13760,11 +13721,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7507523132233847018, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
   m_PrefabInstance: {fileID: 1591078186}
   m_PrefabAsset: {fileID: 0}
---- !u!108 &448805950 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1591078186}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &448805951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13807,11 +13763,6 @@ Transform:
 --- !u!1 &454618519 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7507523132233847018, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1031904696}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &454618520 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
   m_PrefabInstance: {fileID: 1031904696}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &454618521
@@ -14481,7 +14432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 20210048}
+  light: {fileID: 0}
 --- !u!135 &473987651
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14506,11 +14457,6 @@ SphereCollider:
 --- !u!1 &474055230 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7507523132233847018, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1470996571}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &474055231 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
   m_PrefabInstance: {fileID: 1470996571}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &474055232
@@ -14738,10 +14684,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470167d4640f4944ab6717e0afa8aae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerFocos
-  focos:
-  - {fileID: 1732423548}
-  cantidadARomper: 1
-  delayEntreFocos: 0.2
+  spotlights: []
+  amountToBroken: 2
+  delayBetweenSpotlights: 0.2
 --- !u!65 &479204871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16243,11 +16188,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7507523132233847018, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
   m_PrefabInstance: {fileID: 1729040578}
   m_PrefabAsset: {fileID: 0}
---- !u!108 &519253252 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1729040578}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &519253253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16490,7 +16430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37dab817754dfc840884193186d56f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MatchPerformance
-  duracion: 6
+  duration: 6
 --- !u!1001 &533147433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17424,7 +17364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 184143660}
+  light: {fileID: 0}
 --- !u!135 &563757968
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19144,7 +19084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 448805950}
+  light: {fileID: 0}
 --- !u!135 &616854504
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19600,7 +19540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 270256953}
+  light: {fileID: 0}
 --- !u!135 &628321673
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19756,7 +19696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37dab817754dfc840884193186d56f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MatchPerformance
-  duracion: 6
+  duration: 6
 --- !u!4 &632754763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400006, guid: 8c088c51437f8e84c8ccf368945d30c0, type: 3}
@@ -19807,7 +19747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 454618520}
+  light: {fileID: 0}
 --- !u!135 &636449040
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -21089,7 +21029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 1351528085}
+  light: {fileID: 0}
 --- !u!135 &681861903
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -21953,7 +21893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 1159356597}
+  light: {fileID: 0}
 --- !u!135 &718499793
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -22415,11 +22355,6 @@ PrefabInstance:
 --- !u!1 &724903676 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7507523132233847018, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 382594227}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &724903677 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
   m_PrefabInstance: {fileID: 382594227}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &724903678
@@ -25289,7 +25224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 1095369237}
+  light: {fileID: 0}
 --- !u!135 &837072840
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -28158,11 +28093,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &937216202 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 8565929468525460022, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1729040578}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &940094810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28639,7 +28569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37dab817754dfc840884193186d56f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MatchPerformance
-  duracion: 6
+  duration: 6
 --- !u!1 &958133784 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8933610462300518685, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
@@ -29364,11 +29294,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7507523132233847018, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
   m_PrefabInstance: {fileID: 265356134}
   m_PrefabAsset: {fileID: 0}
---- !u!108 &975490976 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 265356134}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &975490977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29722,11 +29647,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &992661269 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 8565929468525460022, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1276745538}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1009268624
 GameObject:
   m_ObjectHideFlags: 0
@@ -30846,11 +30766,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &1037829633 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 7813663425045420209, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
-  m_PrefabInstance: {fileID: 647907972}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1040591388
 GameObject:
   m_ObjectHideFlags: 0
@@ -31168,7 +31083,7 @@ GameObject:
   - component: {fileID: 1052709281}
   - component: {fileID: 1052709280}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31797,11 +31712,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1364078614666478692, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
   m_PrefabInstance: {fileID: 1562429263}
   m_PrefabAsset: {fileID: 0}
---- !u!108 &1095369237 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 7813663425045420209, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
-  m_PrefabInstance: {fileID: 1562429263}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1095369238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31951,11 +31861,6 @@ GameObject:
 --- !u!1 &1098540255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7507523132233847018, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 2135341915}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &1098540256 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
   m_PrefabInstance: {fileID: 2135341915}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1098540257
@@ -32329,7 +32234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 1329141765}
+  light: {fileID: 0}
 --- !u!135 &1123492702
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -32646,11 +32551,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &1130480739 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 6637052621915433607, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1276745538}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1131282577
 GameObject:
   m_ObjectHideFlags: 0
@@ -33485,7 +33385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 1098540256}
+  light: {fileID: 0}
 --- !u!135 &1153733186
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -33510,11 +33410,6 @@ SphereCollider:
 --- !u!1 &1159356596 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7507523132233847018, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 829604851}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &1159356597 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
   m_PrefabInstance: {fileID: 829604851}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1159356598
@@ -34437,11 +34332,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &1202095813 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 8565929468525460022, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 2120097026}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1209448872
 GameObject:
   m_ObjectHideFlags: 0
@@ -34700,11 +34590,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &1213620830 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1537768235632425462, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1276745538}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1215618172
 GameObject:
   m_ObjectHideFlags: 0
@@ -34834,18 +34719,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b6f6dcf88538943a2a9a4e0607566c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  luces:
-  - {fileID: 1698748725}
-  - {fileID: 162752099}
-  - {fileID: 1608401262}
-  - {fileID: 1609893529}
-  intensidadNormal: 30
-  duracionParpadeo: 2
-  intervaloMin: 0.05
-  intervaloMax: 0.2
+  lights: []
+  intensityNormal: 30
+  durationBlinking: 2
+  intervalMin: 0.05
+  intervalMax: 0.2
   audioSource: {fileID: 1221280546}
-  clipElectricidad: {fileID: 8300000, guid: 21e41b4a3b66b53478ce797d89281478, type: 3}
-  clipRuptura: {fileID: 8300000, guid: b74f0cfd7f68f884e981a080c3ba6730, type: 3}
+  electricityClip: {fileID: 0}
+  clipBreakdown: {fileID: 0}
 --- !u!82 &1221280546
 AudioSource:
   m_ObjectHideFlags: 0
@@ -35100,7 +34981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 724903677}
+  light: {fileID: 0}
 --- !u!135 &1225793984
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -35156,11 +35037,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &1226716476 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1537768235632425462, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 2120097026}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1227561737
 GameObject:
   m_ObjectHideFlags: 0
@@ -35877,18 +35753,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b6f6dcf88538943a2a9a4e0607566c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FocoRoto
-  luces:
-  - {fileID: 1351528085}
-  - {fileID: 1130480739}
-  - {fileID: 1213620830}
-  - {fileID: 992661269}
-  intensidadNormal: 30
-  duracionParpadeo: 2
-  intervaloMin: 0.05
-  intervaloMax: 0.2
+  lights: []
+  intensityNormal: 30
+  durationBlinking: 2
+  intervalMin: 0.05
+  intervalMax: 0.2
   audioSource: {fileID: 1256306055}
-  clipElectricidad: {fileID: 8300000, guid: 21e41b4a3b66b53478ce797d89281478, type: 3}
-  clipRuptura: {fileID: 8300000, guid: b74f0cfd7f68f884e981a080c3ba6730, type: 3}
+  electricityClip: {fileID: 0}
+  clipBreakdown: {fileID: 0}
 --- !u!1 &1258141963 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5463869614582699643, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
@@ -36080,7 +35952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 1037829633}
+  light: {fileID: 0}
 --- !u!135 &1258980042
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -36254,7 +36126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 1925921981}
+  light: {fileID: 0}
 --- !u!135 &1261072381
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -37222,11 +37094,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7507523132233847018, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
   m_PrefabInstance: {fileID: 370599902}
   m_PrefabAsset: {fileID: 0}
---- !u!108 &1329141765 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 370599902}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1329141766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37375,18 +37242,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b6f6dcf88538943a2a9a4e0607566c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FocoRoto
-  luces:
-  - {fileID: 425245971}
-  - {fileID: 2116003683}
-  - {fileID: 1562889117}
-  - {fileID: 289936758}
-  intensidadNormal: 30
-  duracionParpadeo: 2
-  intervaloMin: 0.05
-  intervaloMax: 0.2
+  lights: []
+  intensityNormal: 30
+  durationBlinking: 2
+  intervalMin: 0.05
+  intervalMax: 0.2
   audioSource: {fileID: 1333148274}
-  clipElectricidad: {fileID: 8300000, guid: 21e41b4a3b66b53478ce797d89281478, type: 3}
-  clipRuptura: {fileID: 8300000, guid: b74f0cfd7f68f884e981a080c3ba6730, type: 3}
+  electricityClip: {fileID: 0}
+  clipBreakdown: {fileID: 0}
 --- !u!1 &1335649754
 GameObject:
   m_ObjectHideFlags: 0
@@ -37684,11 +37547,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7507523132233847018, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
   m_PrefabInstance: {fileID: 1276745538}
   m_PrefabAsset: {fileID: 0}
---- !u!108 &1351528085 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1276745538}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1351528086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37825,7 +37683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37dab817754dfc840884193186d56f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MatchPerformance
-  duracion: 6
+  duration: 6
 --- !u!4 &1366063876 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 942233390336020709, guid: d217519c9446eaf47984f13bfa139876, type: 3}
@@ -37989,8 +37847,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58d7b0fffeafd4b4dbfb3b15a7c4c465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  barra: {fileID: 1379396138}
-  sistema: {fileID: 1687248299}
+  bar: {fileID: 0}
+  system: {fileID: 0}
   fill: {fileID: 1116640066}
 --- !u!114 &1379396138
 MonoBehaviour:
@@ -38122,7 +37980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 1698748725}
+  light: {fileID: 0}
 --- !u!135 &1385247220
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -38703,11 +38561,6 @@ PrefabInstance:
 --- !u!1 &1421227257 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1364078614666478692, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
-  m_PrefabInstance: {fileID: 2090515304}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &1421227258 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 7813663425045420209, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
   m_PrefabInstance: {fileID: 2090515304}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1421227259
@@ -39543,7 +39396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 1733817119}
+  light: {fileID: 0}
 --- !u!135 &1462045128
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -41761,7 +41614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 519253252}
+  light: {fileID: 0}
 --- !u!135 &1543844696
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -42304,11 +42157,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &1562889117 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1537768235632425462, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 291823560}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1562893496
 GameObject:
   m_ObjectHideFlags: 0
@@ -42859,7 +42707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 2007757878}
+  light: {fileID: 0}
 --- !u!135 &1579661065
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -43206,11 +43054,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470167d4640f4944ab6717e0afa8aae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerFocos
-  focos:
-  - {fileID: 1256306056}
-  - {fileID: 325003101}
-  cantidadARomper: 2
-  delayEntreFocos: 0.2
+  spotlights: []
+  amountToBroken: 2
+  delayBetweenSpotlights: 0.2
 --- !u!65 &1589751765
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44041,11 +43887,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &1608401262 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1537768235632425462, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1131315057}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1608776863
 GameObject:
   m_ObjectHideFlags: 0
@@ -44207,11 +44048,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &1609893529 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 8565929468525460022, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1131315057}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1610818399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44894,11 +44730,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7507523132233847018, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
   m_PrefabInstance: {fileID: 1810632363}
   m_PrefabAsset: {fileID: 0}
---- !u!108 &1633373126 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1810632363}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1633373127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44973,7 +44804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 975490976}
+  light: {fileID: 0}
 --- !u!135 &1639199740
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -45071,11 +44902,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &1643632127 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1537768235632425462, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1729040578}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1646466045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4231213078265552, guid: 6d0f69892e260164b9b56372f7556fdb, type: 3}
@@ -45821,20 +45647,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa08dbe79c54bc14a9a8ec1118226ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  pantallaGameOver: {fileID: 442849690}
-  camara: {fileID: 1743058261}
+  screenGameOver: {fileID: 0}
+  camera: {fileID: 0}
   volume: {fileID: 832575518}
-  controlCamara: {fileID: 0}
-  fadeNegro: {fileID: 517954620}
+  controlCamera: {fileID: 0}
+  blackFade: {fileID: 0}
   audioSource: {fileID: 104126379}
-  recuerdoInicial: {fileID: 8300000, guid: b5ff7693c01f59f4c8a258793c509bb3, type: 3}
-  recuerdos:
-  - {fileID: 8300000, guid: eb4408351e435344c92c23e7260505a1, type: 3}
-  - {fileID: 8300000, guid: 935bb39b3d4072e458a5d11f1d0d5c37, type: 3}
-  - {fileID: 8300000, guid: ff43cfdf55504c445b289b741f3d8d35, type: 3}
-  - {fileID: 8300000, guid: 11e7c9b6a3308dd459d62d804f6b45ef, type: 3}
-  pitidoFinal: {fileID: 8300000, guid: 6526e900f4da4ed44865a7e584d45f90, type: 3}
-  latido: {fileID: 8300000, guid: 3018bdb801f344e4fae2dcb3d21f7c27, type: 3}
+  initialMemory: {fileID: 0}
+  memories: []
+  whistleFinal: {fileID: 0}
+  beat: {fileID: 0}
 --- !u!114 &1687248299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45847,13 +45669,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c843aff4079a1488596ef82c93c116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  corduraMax: 100
-  corduraActual: 0
-  tiempoAntesDePerder: 1
-  perdidaPorSegundo: 5
-  recuperacionPorSegundo: 10
-  barraUI: {fileID: 1379396135}
-  muerteJugador: {fileID: 1687248298}
+  sanityMax: 500
+  sanityCurrent: 0
+  timeBeforeLose: 3
+  losePerSecond: 5
+  recoverPerSecond: 10
+  barUI: {fileID: 0}
+  playerDie: {fileID: 0}
 --- !u!4 &1687248305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
@@ -45871,22 +45693,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f67e30bc7ecfe74aa6cb43bca11ff33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  sistema: {fileID: 1687248299}
-  audioRespiracion: {fileID: 1687248307}
-  audioLocura: {fileID: 176506655}
-  respiracionNormal: {fileID: 8300000, guid: 3e836ba830ddba444bc2deade9034026, type: 3}
-  respiracionAgitada: {fileID: 8300000, guid: 11e7c9b6a3308dd459d62d804f6b45ef, type: 3}
-  sonidosLocura:
-  - {fileID: 8300000, guid: 0cc663604d05a904288f95ce01718f44, type: 3}
-  - {fileID: 8300000, guid: dfcf7a8c30560974181e3edf365c29e7, type: 3}
-  - {fileID: 8300000, guid: 5a69c37d2823fa6438e32ab9e274f424, type: 3}
-  - {fileID: 8300000, guid: dad220d3d2a5072449f512f5405559c1, type: 3}
-  intervaloMin: 0.5
-  intervaloMax: 2
-  volumenMax: 1
-  delayAntesFade: 0.2
-  velocidadFade: 4
-  velocidadEntrada: 3
+  system: {fileID: 0}
+  breathingSound: {fileID: 0}
+  insanitySound: {fileID: 0}
+  normalBreathing: {fileID: 0}
+  upsetBreathing: {fileID: 0}
+  insanitySounds: []
+  intervalMin: 0.5
+  intervalMax: 2
+  volumeMax: 1
+  delayBeforeFade: 0.2
+  speedFade: 4
+  speedEntrance: 3
 --- !u!82 &1687248307
 AudioSource:
   m_ObjectHideFlags: 0
@@ -45997,7 +45815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryInput
   inventory: {fileID: 1687248314}
-  sistemaCordura: {fileID: 1687248299}
+  sanitySistem: {fileID: 1687248299}
 --- !u!114 &1687248314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46142,11 +45960,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &1698748725 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1131315057}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1699252764 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4231213078265552, guid: 6d0f69892e260164b9b56372f7556fdb, type: 3}
@@ -47064,26 +46877,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b6f6dcf88538943a2a9a4e0607566c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FocoRoto
-  luces:
-  - {fileID: 519253252}
-  - {fileID: 345890063}
-  - {fileID: 1643632127}
-  - {fileID: 937216202}
-  intensidadNormal: 30
-  duracionParpadeo: 2
-  intervaloMin: 0.05
-  intervaloMax: 0.2
+  lights: []
+  intensityNormal: 30
+  durationBlinking: 2
+  intervalMin: 0.05
+  intervalMax: 0.2
   audioSource: {fileID: 1732423547}
-  clipElectricidad: {fileID: 8300000, guid: 21e41b4a3b66b53478ce797d89281478, type: 3}
-  clipRuptura: {fileID: 8300000, guid: b74f0cfd7f68f884e981a080c3ba6730, type: 3}
+  electricityClip: {fileID: 0}
+  clipBreakdown: {fileID: 0}
 --- !u!1 &1733817118 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7507523132233847018, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1721759225}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &1733817119 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
   m_PrefabInstance: {fileID: 1721759225}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1733817120
@@ -47791,11 +47595,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &1751617518 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1537768235632425462, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1470996571}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1752807028 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 594807383465131079, guid: 5e00de044f7549a4f98b8da5105d3d8e, type: 3}
@@ -51310,7 +51109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 62088705}
+  light: {fileID: 0}
 --- !u!135 &1883035954
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -52462,11 +52261,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1364078614666478692, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
   m_PrefabInstance: {fileID: 1160756073}
   m_PrefabAsset: {fileID: 0}
---- !u!108 &1925921981 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 7813663425045420209, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
-  m_PrefabInstance: {fileID: 1160756073}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1925921982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52676,11 +52470,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &1937531558 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 6637052621915433607, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 1470996571}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1938124548
 GameObject:
   m_ObjectHideFlags: 0
@@ -54191,6 +53980,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1193025663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2002527153 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4520085917022571849, guid: 641aecc32e590754295bc66600218017, type: 3}
+  m_PrefabInstance: {fileID: 229729233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2004008635
 GameObject:
   m_ObjectHideFlags: 0
@@ -54263,11 +54057,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1364078614666478692, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
   m_PrefabInstance: {fileID: 1870140574}
   m_PrefabAsset: {fileID: 0}
---- !u!108 &2007757878 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 7813663425045420209, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
-  m_PrefabInstance: {fileID: 1870140574}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2007757879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54331,11 +54120,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &2009038532 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 6637052621915433607, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 2120097026}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2018050841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55424,7 +55208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  luz: {fileID: 425245971}
+  light: {fileID: 0}
 --- !u!135 &2080054289
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -55753,6 +55537,11 @@ Transform:
   - {fileID: 639547530}
   m_Father: {fileID: 1227561738}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2101666508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3727255721490721955, guid: 641aecc32e590754295bc66600218017, type: 3}
+  m_PrefabInstance: {fileID: 229729233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2108084830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56061,18 +55850,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b6f6dcf88538943a2a9a4e0607566c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FocoRoto
-  luces:
-  - {fileID: 270256953}
-  - {fileID: 2009038532}
-  - {fileID: 1226716476}
-  - {fileID: 1202095813}
-  intensidadNormal: 30
-  duracionParpadeo: 2
-  intervaloMin: 0.05
-  intervaloMax: 0.2
+  lights: []
+  intensityNormal: 30
+  durationBlinking: 2
+  intervalMin: 0.05
+  intervalMax: 0.2
   audioSource: {fileID: 2115656215}
-  clipElectricidad: {fileID: 8300000, guid: 21e41b4a3b66b53478ce797d89281478, type: 3}
-  clipRuptura: {fileID: 8300000, guid: b74f0cfd7f68f884e981a080c3ba6730, type: 3}
+  electricityClip: {fileID: 0}
+  clipBreakdown: {fileID: 0}
 --- !u!1 &2116003679 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5463869614582699643, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
@@ -56107,11 +55892,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!108 &2116003683 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 6637052621915433607, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
-  m_PrefabInstance: {fileID: 291823560}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2119980222
 GameObject:
   m_ObjectHideFlags: 0
