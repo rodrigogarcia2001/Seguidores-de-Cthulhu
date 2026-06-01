@@ -5,12 +5,24 @@ public class Medbox : MonoBehaviour, IUsable
 {
     [SerializeField] private float increase = 5f;
     [SerializeField] private float duration = 3f;
+    [SerializeField] private AudioClip useSound;
 
     private Light[] originalLights;
     private float[] originalRanges;
+    private AudioSource audioSource;
+    [SerializeField] private ParticleSystem medboxParticles;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void Use(GameObject player)
     {
+        if (useSound != null)
+            audioSource.PlayOneShot(useSound);
+
+        medboxParticles.Play();
         StartCoroutine(ExpandLights());
         StartCoroutine(DestroyLater());
     }

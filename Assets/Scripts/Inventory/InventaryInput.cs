@@ -41,7 +41,7 @@ public class InventoryInput : MonoBehaviour
 
         if (usable == null)
         {
-            Debug.LogError("El prefab no implementa IUsable");;
+            Debug.LogError("El prefab no implementa IUsable"); ;
             return;
         }
 
