@@ -55560,33 +55560,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1309313085847572244, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.012
-      objectReference: {fileID: 0}
-    - target: {fileID: 1309313085847572244, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.734
-      objectReference: {fileID: 0}
-    - target: {fileID: 1309313085847572244, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
+    - target: {fileID: 1576342371883058663, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
+      propertyPath: completeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f46f0a2c65fb92c43ab0442b283113b0, type: 3}
     - target: {fileID: 3899351751551580485, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
       propertyPath: m_Name
       value: Room_PuzzleFusibles
-      objectReference: {fileID: 0}
-    - target: {fileID: 4263132588348828024, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
-      propertyPath: m_Range
-      value: 17.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 4846203274718354311, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 145.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4846203274718354311, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -17.79
       objectReference: {fileID: 0}
     - target: {fileID: 6302837680511630524, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
       propertyPath: m_LocalPosition.x
@@ -55627,14 +55607,6 @@ PrefabInstance:
     - target: {fileID: 6302837680511630524, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6662520105885955967, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 144.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 6662520105885955967, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 11.04
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

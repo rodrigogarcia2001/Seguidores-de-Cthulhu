@@ -1,22 +1,41 @@
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class FuseBox : MonoBehaviour
 {
     [Header("References to Assign")]
     public GameObject targetDoor;
-    public Renderer[] slotRenderers;       // Arrastrar aquí Ranura_1, Ranura_2 y Ranura_3
-    public Material activeLightMaterial;   // Tu material verde emisivo
+    public Renderer[] slotRenderers;
+    public Material activeLightMaterial;
+    public GameObject healingZone;        // <-- NUEVO: Arrastra aquí el objeto que cura al jugador
+
+    [Header("Audio Settings")]
+    public AudioClip insertSound;
+    public AudioClip errorSound;
+    public AudioClip completeSound;
 
     [Header("Puzzle Settings")]
     public int requiredFuses = 3;
 
-    private int fusesInHand = 0; // Fusibles que el jugador lleva encima
-    private int fusesPlaced = 0; // Fusibles que ya se colocaron en el panel
+    private int fusesInHand = 0;
+    private int fusesPlaced = 0;
 
     private bool isPuzzleCompleted = false;
     private bool isPlayerNearby = false;
 
-    // Esta función la llama el fusible del piso cuando lo agarramos
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+
+        // OPCIONAL: Nos aseguramos de que la zona empiece apagada por código por si acaso
+        if (healingZone != null)
+        {
+            healingZone.SetActive(false);
+        }
+    }
+
     public void PickUpFuse()
     {
         fusesInHand++;
@@ -41,7 +60,6 @@ public class FuseBox : MonoBehaviour
 
     void Update()
     {
-        // Si el jugador está cerca, presiona E, el puzzle NO está completo y TIENE al menos 1 fusible
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E) && !isPuzzleCompleted)
         {
             if (fusesInHand > 0)
@@ -50,6 +68,10 @@ public class FuseBox : MonoBehaviour
             }
             else
             {
+                if (errorSound != null)
+                {
+                    audioSource.PlayOneShot(errorSound);
+                }
                 Debug.Log("No tienes fusibles en la mano para colocar.");
             }
         }
@@ -57,18 +79,20 @@ public class FuseBox : MonoBehaviour
 
     private void PlaceFuse()
     {
-        fusesInHand--; // Descontamos uno del inventario del jugador
+        fusesInHand--;
 
-        // Encendemos solo la ranura correspondiente (0, 1 o 2)
+        if (insertSound != null)
+        {
+            audioSource.PlayOneShot(insertSound);
+        }
+
         if (fusesPlaced < slotRenderers.Length && slotRenderers[fusesPlaced] != null)
         {
             slotRenderers[fusesPlaced].material = activeLightMaterial;
         }
 
-        fusesPlaced++; // Lo sumamos a la caja
-        Debug.Log("Fusible colocado. Total en caja: " + fusesPlaced + " / " + requiredFuses);
+        fusesPlaced++;
 
-        // Si ya colocamos los necesarios, completamos el puzzle
         if (fusesPlaced >= requiredFuses)
         {
             CompletePuzzle();
@@ -78,6 +102,18 @@ public class FuseBox : MonoBehaviour
     private void CompletePuzzle()
     {
         isPuzzleCompleted = true;
+
+        if (completeSound != null)
+        {
+            audioSource.PlayOneShot(completeSound);
+        }
+
+        // ¡¡AQUÍ ACTIVAMOS LA CURACIÓN!!
+        if (healingZone != null)
+        {
+            healingZone.SetActive(true);
+            Debug.Log("¡Zona de curación encendida!");
+        }
 
         if (targetDoor != null)
         {
