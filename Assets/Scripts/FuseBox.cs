@@ -3,21 +3,24 @@ using UnityEngine;
 public class FuseBox : MonoBehaviour
 {
     [Header("References to Assign")]
-    public GameObject targetDoor;          // Drag the door/fence that blocks the path here
-    public Renderer[] slotRenderers;      // Your 3 slot objects (Ranuras)
-    public Material activeLightMaterial;   // Your emissive green/red material
+    public GameObject targetDoor;
+    public Renderer[] slotRenderers;       // Arrastrar aquí Ranura_1, Ranura_2 y Ranura_3
+    public Material activeLightMaterial;   // Tu material verde emisivo
 
     [Header("Puzzle Settings")]
     public int requiredFuses = 3;
-    private int collectedFusesCount = 0;
+
+    private int fusesInHand = 0; // Fusibles que el jugador lleva encima
+    private int fusesPlaced = 0; // Fusibles que ya se colocaron en el panel
+
     private bool isPuzzleCompleted = false;
     private bool isPlayerNearby = false;
 
-    // This function is called by the ItemFuse script automatically
-    public void RegisterCollectedFuse()
+    // Esta función la llama el fusible del piso cuando lo agarramos
+    public void PickUpFuse()
     {
-        collectedFusesCount++;
-        Debug.Log("Fuses collected: " + collectedFusesCount + " / " + requiredFuses);
+        fusesInHand++;
+        Debug.Log("Recogiste un fusible. Tienes " + fusesInHand + " en la mano.");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -38,16 +41,37 @@ public class FuseBox : MonoBehaviour
 
     void Update()
     {
+        // Si el jugador está cerca, presiona E, el puzzle NO está completo y TIENE al menos 1 fusible
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E) && !isPuzzleCompleted)
         {
-            if (collectedFusesCount >= requiredFuses)
+            if (fusesInHand > 0)
             {
-                CompletePuzzle();
+                PlaceFuse();
             }
             else
             {
-                Debug.Log("You need " + (requiredFuses - collectedFusesCount) + " more fuses.");
+                Debug.Log("No tienes fusibles en la mano para colocar.");
             }
+        }
+    }
+
+    private void PlaceFuse()
+    {
+        fusesInHand--; // Descontamos uno del inventario del jugador
+
+        // Encendemos solo la ranura correspondiente (0, 1 o 2)
+        if (fusesPlaced < slotRenderers.Length && slotRenderers[fusesPlaced] != null)
+        {
+            slotRenderers[fusesPlaced].material = activeLightMaterial;
+        }
+
+        fusesPlaced++; // Lo sumamos a la caja
+        Debug.Log("Fusible colocado. Total en caja: " + fusesPlaced + " / " + requiredFuses);
+
+        // Si ya colocamos los necesarios, completamos el puzzle
+        if (fusesPlaced >= requiredFuses)
+        {
+            CompletePuzzle();
         }
     }
 
@@ -55,24 +79,14 @@ public class FuseBox : MonoBehaviour
     {
         isPuzzleCompleted = true;
 
-        // 1. Turn on slot visual indicators
-        foreach (Renderer slot in slotRenderers)
-        {
-            if (slot != null && activeLightMaterial != null)
-            {
-                slot.material = activeLightMaterial;
-            }
-        }
-
-        // 2. Open the door by disabling it
         if (targetDoor != null)
         {
-            targetDoor.SetActive(false);
-            Debug.Log("Puzzle Complete! Door opened.");
-        }
-        else
-        {
-            Debug.LogError("Target Door is missing in the FuseBox Inspector!");
+            Animator doorAnimator = targetDoor.GetComponent<Animator>();
+            if (doorAnimator != null)
+            {
+                doorAnimator.SetTrigger("Open");
+                Debug.Log("¡Puzzle completado! Puerta abriéndose.");
+            }
         }
     }
 }
