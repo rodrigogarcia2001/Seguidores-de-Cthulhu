@@ -138,8 +138,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4135013735270702856}
-  - component: {fileID: 67610017937406619}
-  - component: {fileID: 999213521251494973}
+  - component: {fileID: 1043403657321441651}
+  - component: {fileID: 3961786584243758790}
   m_Layer: 0
   m_Name: PlayerCameraRoot
   m_TagString: CinemachineTarget
@@ -163,7 +163,7 @@ Transform:
   - {fileID: 315591540389525472}
   m_Father: {fileID: 8997996947095583982}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &67610017937406619
+--- !u!20 &1043403657321441651
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,7 +214,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &999213521251494973
+--- !u!114 &3961786584243758790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -523,13 +523,13 @@ GameObject:
   - component: {fileID: 1978471637655604388}
   - component: {fileID: 5420857361349278248}
   - component: {fileID: 8616685848737228376}
-  - component: {fileID: 5613857810778749898}
-  - component: {fileID: 7847630910765689650}
-  - component: {fileID: 1304348832671435128}
   - component: {fileID: 7908881784414654821}
-  - component: {fileID: 3423085668346608262}
-  - component: {fileID: 1392980061745064970}
-  - component: {fileID: 8741859317857031325}
+  - component: {fileID: 2328350512705259520}
+  - component: {fileID: 2107260429044772533}
+  - component: {fileID: 6183659828361667115}
+  - component: {fileID: 1727302925911281232}
+  - component: {fileID: 6143680966695982384}
+  - component: {fileID: 3635367761398640231}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -743,79 +743,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &5613857810778749898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8616685848737228372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa08dbe79c54bc14a9a8ec1118226ba9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  screenGameOver: {fileID: 0}
-  camera: {fileID: 67610017937406619}
-  volume: {fileID: 0}
-  controlCamera: {fileID: 0}
-  blackFade: {fileID: 0}
-  audioSource: {fileID: 0}
-  initialMemory: {fileID: 8300000, guid: b5ff7693c01f59f4c8a258793c509bb3, type: 3}
-  memories:
-  - {fileID: 8300000, guid: eb4408351e435344c92c23e7260505a1, type: 3}
-  - {fileID: 8300000, guid: 935bb39b3d4072e458a5d11f1d0d5c37, type: 3}
-  - {fileID: 8300000, guid: ff43cfdf55504c445b289b741f3d8d35, type: 3}
-  - {fileID: 8300000, guid: 11e7c9b6a3308dd459d62d804f6b45ef, type: 3}
-  whistleFinal: {fileID: 8300000, guid: 6526e900f4da4ed44865a7e584d45f90, type: 3}
-  beat: {fileID: 8300000, guid: 3018bdb801f344e4fae2dcb3d21f7c27, type: 3}
---- !u!114 &7847630910765689650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8616685848737228372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c843aff4079a1488596ef82c93c116, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  sanityMax: 500
-  sanityCurrent: 0
-  timeBeforeLose: 3
-  losePerSecond: 5
-  recoverPerSecond: 10
-  barUI: {fileID: 0}
-  playerDie: {fileID: 5613857810778749898}
---- !u!114 &1304348832671435128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8616685848737228372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f67e30bc7ecfe74aa6cb43bca11ff33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  system: {fileID: 7847630910765689650}
-  breathingSound: {fileID: 7908881784414654821}
-  insanitySound: {fileID: 5141739464557754306}
-  normalBreathing: {fileID: 8300000, guid: 3e836ba830ddba444bc2deade9034026, type: 3}
-  upsetBreathing: {fileID: 8300000, guid: 11e7c9b6a3308dd459d62d804f6b45ef, type: 3}
-  insanitySounds:
-  - {fileID: 8300000, guid: 0cc663604d05a904288f95ce01718f44, type: 3}
-  - {fileID: 8300000, guid: dfcf7a8c30560974181e3edf365c29e7, type: 3}
-  - {fileID: 8300000, guid: 5a69c37d2823fa6438e32ab9e274f424, type: 3}
-  - {fileID: 8300000, guid: dad220d3d2a5072449f512f5405559c1, type: 3}
-  intervalMin: 0.5
-  intervalMax: 2
-  volumeMax: 1
-  delayBeforeFade: 0.2
-  speedFade: 4
-  speedEntrance: 3
 --- !u!82 &7908881784414654821
 AudioSource:
   m_ObjectHideFlags: 0
@@ -913,7 +840,80 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3423085668346608262
+--- !u!114 &2328350512705259520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa08dbe79c54bc14a9a8ec1118226ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  screenGameOver: {fileID: 0}
+  camera: {fileID: 1043403657321441651}
+  volume: {fileID: 0}
+  controlCamera: {fileID: 0}
+  blackFade: {fileID: 0}
+  audioSource: {fileID: 0}
+  initialMemory: {fileID: 8300000, guid: b5ff7693c01f59f4c8a258793c509bb3, type: 3}
+  memories:
+  - {fileID: 8300000, guid: eb4408351e435344c92c23e7260505a1, type: 3}
+  - {fileID: 8300000, guid: 935bb39b3d4072e458a5d11f1d0d5c37, type: 3}
+  - {fileID: 8300000, guid: ff43cfdf55504c445b289b741f3d8d35, type: 3}
+  - {fileID: 8300000, guid: 11e7c9b6a3308dd459d62d804f6b45ef, type: 3}
+  whistleFinal: {fileID: 8300000, guid: 6526e900f4da4ed44865a7e584d45f90, type: 3}
+  beat: {fileID: 8300000, guid: 3018bdb801f344e4fae2dcb3d21f7c27, type: 3}
+--- !u!114 &2107260429044772533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c843aff4079a1488596ef82c93c116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  sanityMax: 500
+  sanityCurrent: 0
+  timeBeforeLose: 3
+  losePerSecond: 5
+  recoverPerSecond: 10
+  barUI: {fileID: 0}
+  playerDie: {fileID: 2328350512705259520}
+--- !u!114 &6183659828361667115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f67e30bc7ecfe74aa6cb43bca11ff33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  system: {fileID: 2107260429044772533}
+  breathingSound: {fileID: 0}
+  insanitySound: {fileID: 0}
+  normalBreathing: {fileID: 8300000, guid: 3e836ba830ddba444bc2deade9034026, type: 3}
+  upsetBreathing: {fileID: 8300000, guid: 11e7c9b6a3308dd459d62d804f6b45ef, type: 3}
+  insanitySounds:
+  - {fileID: 8300000, guid: 0cc663604d05a904288f95ce01718f44, type: 3}
+  - {fileID: 8300000, guid: dfcf7a8c30560974181e3edf365c29e7, type: 3}
+  - {fileID: 8300000, guid: 5a69c37d2823fa6438e32ab9e274f424, type: 3}
+  - {fileID: 8300000, guid: dad220d3d2a5072449f512f5405559c1, type: 3}
+  intervalMin: 0.5
+  intervalMax: 2
+  volumeMax: 1
+  delayBeforeFade: 0.2
+  speedFade: 4
+  speedEntrance: 3
+--- !u!114 &1727302925911281232
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -927,7 +927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InventorySystem
   items: []
   maxSlots: 5
---- !u!114 &1392980061745064970
+--- !u!114 &6143680966695982384
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -939,9 +939,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac1a3d580629a2a448e6a4b8c68cb131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryInput
-  inventory: {fileID: 3423085668346608262}
-  sanitySistem: {fileID: 7847630910765689650}
---- !u!54 &8741859317857031325
+  inventory: {fileID: 1727302925911281232}
+  sanitySistem: {fileID: 2107260429044772533}
+--- !u!54 &3635367761398640231
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

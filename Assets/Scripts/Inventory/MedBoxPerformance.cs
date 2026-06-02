@@ -15,14 +15,14 @@ public class Medbox : MonoBehaviour, IUsable
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        medboxParticles.Play();
     }
 
     public void Use(GameObject player)
     {
         if (useSound != null)
             audioSource.PlayOneShot(useSound);
-
-        medboxParticles.Play();
+        
         StartCoroutine(ExpandLights());
         StartCoroutine(DestroyLater());
     }
