@@ -1,15 +1,17 @@
 using UnityEngine;
 
-public class KeyPuzzle : MonoBehaviour
+public class DoorLock : MonoBehaviour
 {
-    public static bool hasCorrectKey = false;
+    public GameObject door;
 
     private void OnTriggerStay(Collider other)
     {
         if(other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
-            hasCorrectKey = true;
-            Destroy(gameObject);
+            if(KeyPuzzle.hasCorrectKey)
+            {
+                Destroy(door);
+            }
         }
     }
 }
