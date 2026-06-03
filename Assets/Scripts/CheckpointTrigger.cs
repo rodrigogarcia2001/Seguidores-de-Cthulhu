@@ -8,7 +8,7 @@ public class CheckpointTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            CheckpointManager.SavePoint(spawnPoint.position);
+            CheckPointManager.SavePoint(spawnPoint.position);
         }
     }
 }

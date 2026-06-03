@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class CheckpointManager : MonoBehaviour
+public class CheckPointManager : MonoBehaviour
 {
     // La variable estática sobrevive al recargar la escena
     public static Vector3 savePosition = Vector3.zero;
@@ -43,7 +43,7 @@ public class CheckpointManager : MonoBehaviour
         Debug.Log("¡Checkpoint guardado!");
     }
 
-    public static void ResetChekpoints()
+    public static void ResetCheckpoints()
     {
         savePosition = Vector3.zero;
         haveChekpoint = false;

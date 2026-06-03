@@ -24,6 +24,8 @@ public class ControladorMenu : MonoBehaviour
 
     private bool estaPausado = false;
 
+    //public CheckpointManager chekpointManager;
+
     void Awake()
     {
         if (instancia == null) instancia = this;
@@ -113,7 +115,7 @@ public class ControladorMenu : MonoBehaviour
     public void EmpezarJuego()
     {
         Debug.Log("Iniciando nueva partida...");
-        CheckpointManager.ResetearCheckpoints();
+        CheckPointManager.ResetCheckpoints();
 
         if (audioController != null) audioController.FadeOut(1.5f);
         Time.timeScale = 1f;
@@ -201,7 +203,7 @@ public class ControladorMenu : MonoBehaviour
     public void ReiniciarJuegoCompleto()
     {
         Time.timeScale = 1f;
-        CheckpointManager.ResetearCheckpoints();
+        CheckPointManager.ResetCheckpoints();
         SceneManager.LoadScene(1);
     }
 
