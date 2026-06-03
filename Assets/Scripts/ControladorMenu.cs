@@ -10,10 +10,12 @@ public class ControladorMenu : MonoBehaviour
     public GameObject panelPausa;
     public GameObject panelPerder;
     public GameObject panelGanar;
+    public GameObject panelControles; // <-- NUEVO: Referencia al panel de controles
 
     [Header("Botones Menú Principal")]
     public GameObject botonIniciar;
     public GameObject botonSalir;
+    public GameObject botonControles; // <-- NUEVO: (Opcional) Referencia al botón si necesitas ocultarlo
     public GameObject fondoAzul;
 
     [Header("Sonido del Compañero")]
@@ -31,6 +33,9 @@ public class ControladorMenu : MonoBehaviour
     {
         AudioListener.volume = 1f;
 
+        // Asegurarnos de que el panel de controles empiece apagado
+        if (panelControles != null) panelControles.SetActive(false);
+
         if (audioController == null)
         {
             audioController = Object.FindFirstObjectByType<AudioController>();
@@ -38,7 +43,7 @@ public class ControladorMenu : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            // En el menú principal, aseguramos que el cursor se vea
+            // Menú principal
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
@@ -49,12 +54,13 @@ public class ControladorMenu : MonoBehaviour
         }
         else
         {
-            // --- CAMBIO AQUÍ: Bloqueamos el cursor al iniciar cualquier nivel ---
+            // Niveles de juego
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
             if (botonIniciar) botonIniciar.SetActive(false);
             if (botonSalir) botonSalir.SetActive(false);
+            if (botonControles) botonControles.SetActive(false); // Ocultar también este botón
             if (fondoAzul) fondoAzul.SetActive(false);
         }
     }
@@ -66,6 +72,13 @@ public class ControladorMenu : MonoBehaviour
             if ((panelPerder != null && panelPerder.activeSelf) || (panelGanar != null && panelGanar.activeSelf))
                 return;
 
+            // Si el panel de controles está abierto y apretamos pausa, lo cerramos
+            if (panelControles != null && panelControles.activeSelf)
+            {
+                CerrarControles();
+                return;
+            }
+
             if (estaPausado) Reanudar();
             else Pausar();
         }
@@ -75,6 +88,27 @@ public class ControladorMenu : MonoBehaviour
             ReiniciarNivel();
         }
     }
+
+    // --- NUEVAS FUNCIONES PARA CONTROLES ---
+
+    public void AbrirControles()
+    {
+        if (panelControles != null)
+        {
+            panelControles.SetActive(true);
+            // Si quieres ocultar otros paneles temporalmente, lo harías aquí.
+        }
+    }
+
+    public void CerrarControles()
+    {
+        if (panelControles != null)
+        {
+            panelControles.SetActive(false);
+        }
+    }
+
+    // ----------------------------------------
 
     public void EmpezarJuego()
     {
@@ -119,7 +153,6 @@ public class ControladorMenu : MonoBehaviour
         Time.timeScale = 0f;
         estaPausado = true;
 
-        // Liberamos el cursor al pausar
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -127,12 +160,14 @@ public class ControladorMenu : MonoBehaviour
     public void Reanudar()
     {
         if (panelPausa) panelPausa.SetActive(false);
+        // También cerramos el panel de controles por si estaba abierto en pausa
+        if (panelControles) panelControles.SetActive(false);
+
         Time.timeScale = 1f;
         estaPausado = false;
 
         if (audioController != null) audioController.FadeOut(0.5f);
 
-        // --- CAMBIO AQUÍ: Ocultamos el cursor al volver al juego ---
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
