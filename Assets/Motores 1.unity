@@ -11050,6 +11050,11 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 4.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &353648422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5688759954735481034, guid: 641aecc32e590754295bc66600218017, type: 3}
+  m_PrefabInstance: {fileID: 229729233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &353974125
 GameObject:
   m_ObjectHideFlags: 0
@@ -31423,6 +31428,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2107260429044772533, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: playerDie
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328350512705259520, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 1178895444}
     - target: {fileID: 4135013735270702863, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -31430,6 +31443,14 @@ PrefabInstance:
     - target: {fileID: 5393215578589016642, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143680966695982384, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143680966695982384, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: sanitySistem
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: MoveSpeed
@@ -31499,7 +31520,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6183659828361667115, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+    - {fileID: 2328350512705259520, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+    - {fileID: 2107260429044772533, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+    - {fileID: 1727302925911281232, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+    - {fileID: 6143680966695982384, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+    - {fileID: 7908881784414654821, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
@@ -34702,6 +34729,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4642d9723ac2d9c4f8e5a83e7e0049ae, type: 3}
+--- !u!20 &1178895444 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3681295786688322597, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+  m_PrefabInstance: {fileID: 1034669995}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1182698322
 GameObject:
   m_ObjectHideFlags: 0
@@ -44140,6 +44172,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69bf3334979fa484c9387c70849ccf8e, type: 3}
+--- !u!82 &1573869567 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5141739464557754306, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+  m_PrefabInstance: {fileID: 1034669995}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1579661062
 GameObject:
   m_ObjectHideFlags: 0
@@ -47125,16 +47162,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa08dbe79c54bc14a9a8ec1118226ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  screenGameOver: {fileID: 0}
-  camera: {fileID: 0}
+  screenGameOver: {fileID: 353648422}
+  camera: {fileID: 1743058261}
   volume: {fileID: 832575518}
   controlCamera: {fileID: 0}
-  blackFade: {fileID: 0}
+  blackFade: {fileID: 517954620}
   audioSource: {fileID: 104126379}
-  initialMemory: {fileID: 0}
-  memories: []
-  whistleFinal: {fileID: 0}
-  beat: {fileID: 0}
+  initialMemory: {fileID: 8300000, guid: b5ff7693c01f59f4c8a258793c509bb3, type: 3}
+  memories:
+  - {fileID: 8300000, guid: eb4408351e435344c92c23e7260505a1, type: 3}
+  - {fileID: 8300000, guid: 935bb39b3d4072e458a5d11f1d0d5c37, type: 3}
+  - {fileID: 8300000, guid: ff43cfdf55504c445b289b741f3d8d35, type: 3}
+  - {fileID: 8300000, guid: 11e7c9b6a3308dd459d62d804f6b45ef, type: 3}
+  whistleFinal: {fileID: 8300000, guid: 6526e900f4da4ed44865a7e584d45f90, type: 3}
+  beat: {fileID: 8300000, guid: 3018bdb801f344e4fae2dcb3d21f7c27, type: 3}
 --- !u!114 &1687248299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47147,13 +47188,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c843aff4079a1488596ef82c93c116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  sanityMax: 500
+  sanityMax: 100
   sanityCurrent: 0
   timeBeforeLose: 3
   losePerSecond: 5
   recoverPerSecond: 10
-  barUI: {fileID: 0}
-  playerDie: {fileID: 0}
+  barUI: {fileID: 1379396135}
+  playerDie: {fileID: 1687248298}
 --- !u!4 &1687248305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
@@ -47171,12 +47212,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f67e30bc7ecfe74aa6cb43bca11ff33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  system: {fileID: 0}
-  breathingSound: {fileID: 0}
-  insanitySound: {fileID: 0}
-  normalBreathing: {fileID: 0}
-  upsetBreathing: {fileID: 0}
-  insanitySounds: []
+  system: {fileID: 1687248299}
+  breathingSound: {fileID: 1687248307}
+  insanitySound: {fileID: 1573869567}
+  normalBreathing: {fileID: 8300000, guid: 3e836ba830ddba444bc2deade9034026, type: 3}
+  upsetBreathing: {fileID: 8300000, guid: 11e7c9b6a3308dd459d62d804f6b45ef, type: 3}
+  insanitySounds:
+  - {fileID: 8300000, guid: 0cc663604d05a904288f95ce01718f44, type: 3}
+  - {fileID: 8300000, guid: dfcf7a8c30560974181e3edf365c29e7, type: 3}
+  - {fileID: 8300000, guid: 5a69c37d2823fa6438e32ab9e274f424, type: 3}
+  - {fileID: 8300000, guid: dad220d3d2a5072449f512f5405559c1, type: 3}
   intervalMin: 0.5
   intervalMax: 2
   volumeMax: 1
@@ -47293,7 +47338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryInput
   inventory: {fileID: 1687248314}
-  sanitySistem: {fileID: 0}
+  sanitySistem: {fileID: 1687248299}
 --- !u!114 &1687248314
 MonoBehaviour:
   m_ObjectHideFlags: 0
