@@ -10,11 +10,13 @@ public class ControladorMenu : MonoBehaviour
     public GameObject panelPausa;
     public GameObject panelPerder;
     public GameObject panelGanar;
+    public GameObject panelControles;
 
     [Header("Botones Menú Principal")]
     public GameObject botonIniciar;
     public GameObject botonSalir;
     public GameObject fondoAzul;
+    public GameObject botonControles;
 
     [Header("Sonido del Compañero")]
     public AudioController audioController;

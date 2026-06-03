@@ -6820,6 +6820,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasMenu 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4088401341707522860, guid: 641aecc32e590754295bc66600218017, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 229729234}
+    - target: {fileID: 4088401341707522860, guid: 641aecc32e590754295bc66600218017, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7701371226111302681, guid: 641aecc32e590754295bc66600218017, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -6909,6 +6917,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 641aecc32e590754295bc66600218017, type: 3}
+--- !u!1 &229729234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5022699778205017851, guid: 641aecc32e590754295bc66600218017, type: 3}
+  m_PrefabInstance: {fileID: 229729233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &234867722
 GameObject:
   m_ObjectHideFlags: 0
