@@ -76,6 +76,55 @@ public class ControladorMenu : MonoBehaviour
         }
     }
 
+    // --- NUEVAS FUNCIONES PARA CONTROLES ---
+
+    public void AbrirControles()
+    {
+        if (panelControles != null)
+        {
+            panelControles.SetActive(true);
+        }
+
+        // CASO 1: Si lo abres desde el Menú de Pausa en medio del juego
+        if (panelPausa != null && panelPausa.activeSelf)
+        {
+            panelPausa.SetActive(false);
+        }
+        // CASO 2: Si lo abres desde el Menú Principal
+        else
+        {
+            if (fondoAzul != null) fondoAzul.SetActive(false);
+            if (botonIniciar != null) botonIniciar.SetActive(false);
+            if (botonSalir != null) botonSalir.SetActive(false);
+            if (botonControles != null) botonControles.SetActive(false);
+        }
+    }
+
+    public void CerrarControles()
+    {
+        if (panelControles != null)
+        {
+            panelControles.SetActive(false);
+        }
+
+        // Al cerrar, verificamos en qué escena estamos para saber qué reabrir
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            // Si estamos jugando, volvemos a mostrar el panel de pausa
+            if (panelPausa != null) panelPausa.SetActive(true);
+        }
+        else
+        {
+            // Si estamos en el menú principal, volvemos a mostrar los botones de inicio
+            if (fondoAzul != null) fondoAzul.SetActive(true);
+            if (botonIniciar != null) botonIniciar.SetActive(true);
+            if (botonSalir != null) botonSalir.SetActive(true);
+            if (botonControles != null) botonControles.SetActive(true);
+        }
+    }
+
+    // ----------------------------------------
+
     public void EmpezarJuego()
     {
         Debug.Log("Iniciando nueva partida...");

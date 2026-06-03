@@ -6816,37 +6816,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 35956460834120803, guid: 641aecc32e590754295bc66600218017, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 993589543329384268, guid: 641aecc32e590754295bc66600218017, type: 3}
       propertyPath: m_Name
       value: CanvasMenu 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 993589543329384268, guid: 641aecc32e590754295bc66600218017, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3727255721490721955, guid: 641aecc32e590754295bc66600218017, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4378496479384673707, guid: 641aecc32e590754295bc66600218017, type: 3}
-      propertyPath: m_text
-      value: VOLVER A INTENTAR PRESIONANDO LA TECLA V
-      objectReference: {fileID: 0}
-    - target: {fileID: 4378496479384673707, guid: 641aecc32e590754295bc66600218017, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 5022699778205017851, guid: 641aecc32e590754295bc66600218017, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5688759954735481034, guid: 641aecc32e590754295bc66600218017, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7701371226111302681, guid: 641aecc32e590754295bc66600218017, type: 3}
       propertyPath: m_Pivot.x
