@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class PuzzleManager : MonoBehaviour
 {
     public GameObject piecePrefab;
-
+    public GameObject objectToAppear;
     public Texture2D[] textures;
 
     public Material baseMaterial;
@@ -231,7 +231,10 @@ public class PuzzleManager : MonoBehaviour
 
         if (winParticles != null)
             winParticles.Play();
-        
+
+        if (objectToAppear != null)
+        objectToAppear.SetActive(true);
+                
         StartCoroutine(AssemblePuzzle());
     }
 
