@@ -19,6 +19,9 @@ public class TripleKnobMiniGame : MonoBehaviour
 
     [Header("Panel")]
     public ElectricalPanel electricalPanel;
+    
+    [Header("Light System")]
+    public LightSystemManager lightSystemManager;
 
     [Header("Controls")]
     public bool increase;
@@ -148,6 +151,11 @@ public class TripleKnobMiniGame : MonoBehaviour
     void Complete()
     {
         Debug.Log("Triple Panel Repaired");
+
+        if (lightSystemManager != null)
+    {
+        lightSystemManager.RepairAllLights();
+    }
 
         electricalPanel.CloseMiniGame();
     }

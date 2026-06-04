@@ -5,6 +5,7 @@ using UnityEngine.Rendering.Universal; // si usas URP
 
 public class BrokenSpotlight : MonoBehaviour
 {
+    [SerializeField] private bool startBroken = false;
     [SerializeField] private Light[] lights;
     [SerializeField] private float intensityNormal = 30f;
 
@@ -19,7 +20,19 @@ public class BrokenSpotlight : MonoBehaviour
     [SerializeField] private AudioClip electricityClip;
     [SerializeField] private AudioClip clipBreakdown;
     private bool broken = false;
+private void Start()
+{
+    if (startBroken)
+    {
+        broken = true;
 
+        foreach (Light l in lights)
+        {
+            l.intensity = 0f;
+            l.enabled = false;
+        }
+    }
+}
     public void DestroySpotlight()
     {
         if (broken || (audioSource != null && audioSource.isPlaying)) return;
@@ -61,7 +74,7 @@ public class BrokenSpotlight : MonoBehaviour
         }
 
         float timeSync = 0f;
-        float durationSync = 0.5f; // ajustá esto
+        float durationSync = 0.5f; // ajustï¿½ esto
 
         while (timeSync < durationSync)
         {
@@ -116,6 +129,24 @@ public class BrokenSpotlight : MonoBehaviour
             audioSource.Play();
         }
     }
+
+    public void RepairSpotlight()
+{
+    StopAllCoroutines();
+
+    broken = false;
+
+    foreach (Light l in lights)
+    {
+        l.enabled = true;
+        l.intensity = intensityNormal;
+    }
+
+    if (audioSource != null)
+    {
+        audioSource.Stop();
+    }
+}
 
     private void Update()
     {
