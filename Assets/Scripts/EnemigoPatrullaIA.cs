@@ -14,26 +14,14 @@ public class EnemigoPatrullaIA : MonoBehaviour
 
     [Header("Footsteps")]
     [SerializeField] private AudioSource footstepsAudioSource;
-    [SerializeField] private AudioClip[] footstepSounds;
-    [SerializeField] private float minFootstepInterval = 0.45f;
-    [SerializeField] private float maxFootstepInterval = 0.7f;
 
     private List<Transform> routePoints =
     new List<Transform>();
 
 private int currentPoint = 0;
-
-    private float footstepTimer;
-    private float nextFootstepTime;
-
     private void Start()
     {
         StartCoroutine(PlayAmbientSounds());
-
-        nextFootstepTime = Random.Range(
-            minFootstepInterval,
-            maxFootstepInterval
-        );
     }
 
     private void Update()
@@ -56,20 +44,6 @@ transform.position = Vector3.MoveTowards(
             transform.forward = direction.normalized;
         }
 
-        footstepTimer += Time.deltaTime;
-
-        if (footstepTimer >= nextFootstepTime)
-        {
-            PlayFootstep();
-
-            footstepTimer = 0f;
-
-            nextFootstepTime = Random.Range(
-                minFootstepInterval,
-                maxFootstepInterval
-            );
-        }
-
         if (Vector3.Distance(
     transform.position,
     target.position) <= arrivalDistance)
@@ -77,9 +51,18 @@ transform.position = Vector3.MoveTowards(
     currentPoint++;
 
     if (currentPoint >= routePoints.Count)
+{
+    if (footstepsAudioSource != null)
     {
-        gameObject.SetActive(false);
+        footstepsAudioSource.Stop();
     }
+
+    gameObject.SetActive(false);
+}
+}
+    if (!footstepsAudioSource.isPlaying)
+{
+    footstepsAudioSource.Play();
 }
     }
 
@@ -104,29 +87,6 @@ transform.position = Vector3.MoveTowards(
         }
     }
 
-    private void PlayFootstep()
-    {
-        if (footstepsAudioSource == null ||
-            footstepSounds.Length == 0)
-            return;
-
-        AudioClip clip =
-            footstepSounds[
-                Random.Range(0, footstepSounds.Length)
-            ];
-
-        footstepsAudioSource.pitch =
-            Random.Range(0.94f, 1.04f);
-
-        float volume =
-            Random.Range(0.85f, 1f);
-
-        footstepsAudioSource.PlayOneShot(
-            clip,
-            volume
-        );
-    }
-
 public void StartRoute(List<Transform> points)
 {
     if (points == null || points.Count < 2)
@@ -140,8 +100,11 @@ public void StartRoute(List<Transform> points)
     transform.position =
         routePoints[0].position;
 
-    currentPoint = 1;
+   currentPoint = 1;
 
-    footstepTimer = 0f;
+if (footstepsAudioSource != null)
+{
+    footstepsAudioSource.Stop();
+}
 }
 }

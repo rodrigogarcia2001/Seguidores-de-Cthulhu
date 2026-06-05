@@ -13,6 +13,7 @@ public class ItemPickup : MonoBehaviour
         {
             if(inventory.AddItem(item))
             {
+                 GetComponent<PickupSound>()?.Play();
                 Destroy(gameObject);
             }
         }    

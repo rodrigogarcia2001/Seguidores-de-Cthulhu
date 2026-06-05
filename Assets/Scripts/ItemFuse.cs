@@ -26,6 +26,7 @@ public class ItemFuse : MonoBehaviour
             if (targetFuseBox != null)
             {
                 targetFuseBox.PickUpFuse(); // <-- Esta es la línea que cambió
+                GetComponent<PickupSound>()?.Play();
                 Destroy(gameObject);
             }
         }
