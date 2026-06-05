@@ -1,11 +1,11 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class EnemyRouteTrigger : MonoBehaviour
 {
     [SerializeField] private EnemigoPatrullaIA enemy;
 
-    [SerializeField] private Transform startPoint;
-    [SerializeField] private Transform endPoint;
+    [SerializeField] private List<Transform> routePoints;
 
     private bool activated = false;
 
@@ -17,7 +17,7 @@ public class EnemyRouteTrigger : MonoBehaviour
         {
             activated = true;
 
-            enemy.StartRoute(startPoint, endPoint);
+            enemy.StartRoute(routePoints);
         }
     }
 }

@@ -18,7 +18,10 @@ public class EnemigoPatrullaIA : MonoBehaviour
     [SerializeField] private float minFootstepInterval = 0.45f;
     [SerializeField] private float maxFootstepInterval = 0.7f;
 
-    private Transform targetPoint;
+    private List<Transform> routePoints =
+    new List<Transform>();
+
+private int currentPoint = 0;
 
     private float footstepTimer;
     private float nextFootstepTime;
@@ -35,18 +38,19 @@ public class EnemigoPatrullaIA : MonoBehaviour
 
     private void Update()
     {
-        if (targetPoint == null)
-            return;
+        if (routePoints.Count == 0)
+    return;
 
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            targetPoint.position,
-            moveSpeed * Time.deltaTime
-        );
+        Transform target = routePoints[currentPoint];
 
-        Vector3 direction =
-            targetPoint.position - transform.position;
+transform.position = Vector3.MoveTowards(
+    transform.position,
+    target.position,
+    moveSpeed * Time.deltaTime
+);
 
+       Vector3 direction =
+    target.position - transform.position;
         if (direction != Vector3.zero)
         {
             transform.forward = direction.normalized;
@@ -67,11 +71,16 @@ public class EnemigoPatrullaIA : MonoBehaviour
         }
 
         if (Vector3.Distance(
-            transform.position,
-            targetPoint.position) <= arrivalDistance)
-        {
-            gameObject.SetActive(false);
-        }
+    transform.position,
+    target.position) <= arrivalDistance)
+{
+    currentPoint++;
+
+    if (currentPoint >= routePoints.Count)
+    {
+        gameObject.SetActive(false);
+    }
+}
     }
 
     private IEnumerator PlayAmbientSounds()
@@ -118,17 +127,21 @@ public class EnemigoPatrullaIA : MonoBehaviour
         );
     }
 
-    public void StartRoute(
-        Transform startPoint,
-        Transform endPoint)
-    {
-        gameObject.SetActive(true);
+public void StartRoute(List<Transform> points)
+{
+    if (points == null || points.Count < 2)
+        return;
 
-        transform.position =
-            startPoint.position;
+    gameObject.SetActive(true);
 
-        targetPoint = endPoint;
+    routePoints.Clear();
+    routePoints.AddRange(points);
 
-        footstepTimer = 0f;
-    }
+    transform.position =
+        routePoints[0].position;
+
+    currentPoint = 1;
+
+    footstepTimer = 0f;
+}
 }
