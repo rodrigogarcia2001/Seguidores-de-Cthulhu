@@ -19,6 +19,9 @@ public class TripleKnobMiniGame : MonoBehaviour
 
     [Header("Panel")]
     public ElectricalPanel electricalPanel;
+
+    [Header("Events")]
+public GameObject triggerEnemy;
     
     [Header("Light System")]
     public LightSystemManager lightSystemManager;
@@ -171,6 +174,11 @@ public AudioClip successSound;
     if (lightSystemManager != null)
     {
         lightSystemManager.RepairAllLights();
+    }
+
+    if (triggerEnemy != null)
+    {
+        triggerEnemy.SetActive(true);
     }
 
     yield return new WaitForSeconds(1f);
