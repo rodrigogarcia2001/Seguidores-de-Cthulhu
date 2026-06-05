@@ -11,6 +11,7 @@ public class ControladorMenu : MonoBehaviour
     public GameObject panelPerder;
     public GameObject panelGanar;
     public GameObject panelControles; // <-- NUEVO: Referencia al panel de controles
+    private GameObject panelAnterior;
 
     [Header("Botones Menú Principal")]
     public GameObject botonIniciar;
@@ -93,12 +94,13 @@ public class ControladorMenu : MonoBehaviour
 
     // --- NUEVAS FUNCIONES PARA CONTROLES ---
 
-    public void AbrirControles()
+public void AbrirControles()
     {
         if (panelControles != null)
         {
             panelControles.SetActive(true);
-            // Si quieres ocultar otros paneles temporalmente, lo harías aquí.
+            // Ocultamos el pausa al abrir controles
+            if (panelPausa != null) panelPausa.SetActive(false); 
         }
     }
 
@@ -107,6 +109,8 @@ public class ControladorMenu : MonoBehaviour
         if (panelControles != null)
         {
             panelControles.SetActive(false);
+            // Volvemos a mostrar el pausa al cerrar controles
+            if (panelPausa != null) panelPausa.SetActive(true);
         }
     }
 
