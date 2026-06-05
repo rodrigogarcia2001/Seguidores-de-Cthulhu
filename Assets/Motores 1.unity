@@ -7150,6 +7150,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!108 &62088707 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 7813663425045420209, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
+  m_PrefabInstance: {fileID: 617306852}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &65791427
 GameObject:
   m_ObjectHideFlags: 0
@@ -50846,7 +50851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -57536,6 +57541,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!108 &1105001551 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 4263132588348828024, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
+  m_PrefabInstance: {fileID: 1573450907}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1106851018
 GameObject:
   m_ObjectHideFlags: 0
@@ -60355,6 +60365,11 @@ MonoBehaviour:
 Light:
   m_CorrespondingSourceObject: {fileID: 8565929468525460022, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
   m_PrefabInstance: {fileID: 2120097026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &1206360061 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 4263132588348828024, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
+  m_PrefabInstance: {fileID: 2088518738}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1209448872
 GameObject:
@@ -76057,6 +76072,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room_PuzzleFusibles (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3959284708224174346, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 1105001551}
     - target: {fileID: 4253457703833654006, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
       propertyPath: m_Name
       value: Key3
@@ -76227,7 +76246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 0}
+  light: {fileID: 2007757880}
 --- !u!135 &1579661065
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -85505,7 +85524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 0}
+  light: {fileID: 62088707}
 --- !u!135 &1883035954
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -89344,6 +89363,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!108 &2007757880 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 7813663425045420209, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
+  m_PrefabInstance: {fileID: 1870140574}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2009038529 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5463869614582699643, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
@@ -95704,6 +95728,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room_PuzzleFusibles
       objectReference: {fileID: 0}
+    - target: {fileID: 3959284708224174346, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 1206360061}
     - target: {fileID: 5102537431275098298, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
       propertyPath: m_IsActive
       value: 0
