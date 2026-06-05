@@ -7,11 +7,14 @@ public class FrequencyButton : MonoBehaviour,
 {
     // Triple mini-game
     public TripleKnobMiniGame miniGame;
-
+public AudioSource audioSource;
+public AudioClip buttonSound;
     public bool isPlusButton;
 
     public void OnPointerDown(PointerEventData eventData)
     {
+         audioSource.PlayOneShot(buttonSound);
+
         if (isPlusButton)
             miniGame.increase = true;
         else

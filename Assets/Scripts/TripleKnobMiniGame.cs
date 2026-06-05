@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections;
 public class TripleKnobMiniGame : MonoBehaviour
 {
     [Header("Bars")]
@@ -32,6 +32,13 @@ public class TripleKnobMiniGame : MonoBehaviour
     private float value3 = 0f;
 
     private float correctTime = 0f;
+private bool completed = false;
+    [Header("Audio")]
+public AudioSource audioSource;
+public AudioSource humSource;
+public AudioClip backgroundHum;
+
+public AudioClip successSound;
 
     void Start()
     {
@@ -53,6 +60,7 @@ public class TripleKnobMiniGame : MonoBehaviour
         {
             PlaceRandomZone(bar3, zone3);
         }
+
     }
 
     void Update()
@@ -100,8 +108,9 @@ public class TripleKnobMiniGame : MonoBehaviour
         {
             correctTime += Time.deltaTime;
 
-            if (correctTime >= 1f)
+            if (correctTime >= 1f && !completed)
             {
+                completed = true;
                 Complete();
             }
         }
@@ -150,13 +159,29 @@ public class TripleKnobMiniGame : MonoBehaviour
 
     void Complete()
     {
-        Debug.Log("Triple Panel Repaired");
+        StartCoroutine(CompleteRoutine());
+    }
 
-        if (lightSystemManager != null)
+    IEnumerator CompleteRoutine()
+{
+    Debug.Log("Triple Panel Repaired");
+ humSource.Stop();
+    audioSource.PlayOneShot(successSound);
+
+    if (lightSystemManager != null)
     {
         lightSystemManager.RepairAllLights();
     }
 
-        electricalPanel.CloseMiniGame();
-    }
+    yield return new WaitForSeconds(1f);
+
+    electricalPanel.CloseMiniGame();
+}
+
+void OnEnable()
+{
+    humSource.clip = backgroundHum;
+    humSource.loop = true;
+    humSource.Play();
+}
 }

@@ -5,7 +5,12 @@ public class ElectricalPanel : MonoBehaviour
 {
     [Header("References")]
     public GameObject miniGameUI;
+    
     public FirstPersonController playerController;
+
+    [Header("Audio")]
+public AudioSource audioSource;
+public AudioClip panelOpenSound;
 
     private bool playerNearby = false;
 
@@ -19,6 +24,7 @@ public class ElectricalPanel : MonoBehaviour
 
     void OpenMiniGame()
     {
+        audioSource.PlayOneShot(panelOpenSound);
         miniGameUI.SetActive(true);
 
         playerController.enabled = false;
