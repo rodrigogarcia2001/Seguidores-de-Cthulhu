@@ -9,6 +9,10 @@ public class FuseBox : MonoBehaviour
     public Material activeLightMaterial;
     public GameObject healingZone;        // <-- NUEVO: Arrastra aquí el objeto que cura al jugador
 
+    [Header("Optional Event")]
+public bool startLightsSequence = false;
+public LightsSequenceEvent lightsSequenceEvent;
+
     [Header("Audio Settings")]
     public AudioClip insertSound;
     public AudioClip errorSound;
@@ -124,5 +128,10 @@ public class FuseBox : MonoBehaviour
                 Debug.Log("¡Puzzle completado! Puerta abriéndose.");
             }
         }
+
+        if (startLightsSequence && lightsSequenceEvent != null)
+{
+    lightsSequenceEvent.StartSequence();
+}
     }
 }
