@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-
 public class InventorySlotUI : MonoBehaviour
 {
     public Image icon;
@@ -9,7 +8,6 @@ public class InventorySlotUI : MonoBehaviour
         icon.sprite = item.icon;
         icon.enabled = true;
     }
-
     public void ClearSlot()
     {
         icon.sprite = null;

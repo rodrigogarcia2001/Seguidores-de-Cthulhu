@@ -43,7 +43,6 @@ public class AudioController : MonoBehaviour
             source.volume = Mathf.Lerp(volumeInitial, 0f, t / time);
             yield return null;
         }
-
         source.Stop();
     }
 }

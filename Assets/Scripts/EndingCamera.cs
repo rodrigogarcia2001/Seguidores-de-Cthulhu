@@ -81,8 +81,7 @@ public class EndingCamera : MonoBehaviour
         Vector3 camTargetPos = camStartPos + cameraOffset;
         Quaternion camTargetRot = Quaternion.Euler(cameraRotation);
 
-        Vector3 playerTargetPos =
-            playerStartPos + Vector3.down * playerDrop;
+        Vector3 playerTargetPos = playerStartPos + Vector3.down * playerDrop;
 
         float t = 0f;
 
@@ -90,14 +89,11 @@ public class EndingCamera : MonoBehaviour
         {
             t += Time.deltaTime / duration;
 
-            transform.position =
-                Vector3.Lerp(camStartPos, camTargetPos, t);
+            transform.position = Vector3.Lerp(camStartPos, camTargetPos, t);
 
-            transform.rotation =
-                Quaternion.Slerp(camStartRot, camTargetRot, t);
+            transform.rotation = Quaternion.Slerp(camStartRot, camTargetRot, t);
 
-            player.position =
-                Vector3.Lerp(playerStartPos, playerTargetPos, t);
+            player.position = Vector3.Lerp(playerStartPos, playerTargetPos, t);
 
             yield return null;
         }
@@ -108,11 +104,9 @@ public class EndingCamera : MonoBehaviour
         float closeTime = 0f;
         float closeDuration = 3f;
 
-        float vignetteStart =
-            vignette != null ? vignette.intensity.value : 0f;
+        float vignetteStart = vignette != null ? vignette.intensity.value : 0f;
 
-        float smoothStart =
-            vignette != null ? vignette.smoothness.value : 0f;
+        float smoothStart = vignette != null ? vignette.smoothness.value : 0f;
 
         while (closeTime < closeDuration)
         {
@@ -122,17 +116,14 @@ public class EndingCamera : MonoBehaviour
 
             if (vignette != null)
             {
-                vignette.intensity.value =
-                    Mathf.Lerp(vignetteStart, 1f, p);
+                vignette.intensity.value = Mathf.Lerp(vignetteStart, 1f, p);
 
-                vignette.smoothness.value =
-                    Mathf.Lerp(smoothStart, 1f, p);
+                vignette.smoothness.value = Mathf.Lerp(smoothStart, 1f, p);
             }
 
             if (blackFade != null)
             {
-                blackFade.alpha =
-                    Mathf.Lerp(0f, 1f, p);
+                blackFade.alpha = Mathf.Lerp(0f, 1f, p);
             }
 
             yield return null;

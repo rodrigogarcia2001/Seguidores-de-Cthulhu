@@ -1,27 +1,24 @@
 using UnityEngine;
-
 public class ItemPickup : MonoBehaviour
 {
     public Item item;
     public InventorySystem inventory;
-
     public bool playerInRange = false;
 
     private void Update()
     {
-        if(playerInRange && Input.GetKeyDown(KeyCode.E))
+        if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            if(inventory.AddItem(item))
+            if (inventory.AddItem(item))
             {
-                 GetComponent<PickupSound>()?.Play();
+                GetComponent<PickupSound>()?.Play();
                 Destroy(gameObject);
             }
-        }    
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("TRIGGER DETECTADO con: " + other.name);
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
@@ -30,7 +27,7 @@ public class ItemPickup : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             playerInRange = false;
         }

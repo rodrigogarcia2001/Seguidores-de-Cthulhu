@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class FinalTrigger : MonoBehaviour
 {
     public EndingCamera endingCamera;
@@ -17,9 +16,9 @@ public class FinalTrigger : MonoBehaviour
             endingCamera.StartEnding();
         }
         if (audioToStop != null)
-            {
-                audioToStop.Stop();
-            }
+        {
+            audioToStop.Stop();
+        }
 
     }
 }

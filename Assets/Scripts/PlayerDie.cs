@@ -32,13 +32,6 @@ public class PlayerDie : MonoBehaviour
         volume.profile.TryGet(out bloom);
         volume.profile.TryGet(out vignette);
     }
-    void Update()
-    {
-        //if (Keyboard.current.kKey.wasPressedThisFrame)
-        //{
-        //    Morir();
-        //}
-    }
 
     public void Morir()
     {
@@ -84,16 +77,16 @@ public class PlayerDie : MonoBehaviour
             time += Time.deltaTime * speed;
             float t = Mathf.SmoothStep(0f, 1f, time / duration);
 
-            // 1. Rotar cámara hacia arriba
+            // 1. Rotar camara hacia arriba
             camera.transform.eulerAngles = Vector3.Lerp(rotInicial, rotFinal, t);
 
             // 2. Aumentar bloom
             float tSuave = Mathf.SmoothStep(0f, 1f, t);
             bloom.intensity.value = Mathf.Lerp(bloomInicial, 2000f, tSuave);
-            float tThreshold = 1f - Mathf.Pow(1f - tSuave, 3f); // más rápido
+            float tThreshold = 1f - Mathf.Pow(1f - tSuave, 3f); // mï¿½s rï¿½pido
             bloom.threshold.value = Mathf.Lerp(thresholdInicial, 0f, tThreshold);
 
-            // 3. Cerrar visión (viñeta)
+            // 3. Cerrar vision
 
             vignette.intensity.value = Mathf.Lerp(vignetteInicial, 0.6f, tSuave);
             vignette.smoothness.value = Mathf.Lerp(smoothInicial, 0.9f, tSuave);
@@ -116,7 +109,7 @@ public class PlayerDie : MonoBehaviour
         audioSource.loop = false;
         audioSource.Play();
 
-        // cerrar completamente la visión
+        // cerrar completamente la vision
         float t2 = 0f;
         float durationFinal = 4f;
         while (t2 < durationFinal)
@@ -132,7 +125,6 @@ public class PlayerDie : MonoBehaviour
             yield return null;
         }
 
-        // acá podés hacer game over o reiniciar
         Time.timeScale = 0f;
         yield return new WaitForSecondsRealtime(1.5f);
         screenGameOver.SetActive(true);
@@ -177,14 +169,14 @@ public class PlayerDie : MonoBehaviour
         {
             float t = Mathf.Pow(time / duration, 2.5f);
 
-            // cada vez más rápido
+            // cada vez mas rapido
             float interval = Mathf.Lerp(1.1f, 0.4f, t);
             interval += Random.Range(-0.02f, 0.02f);
 
-            // más fuerte hacia el final
-            float volume = Mathf.Lerp(0.15f, 0.6f, t); ;
+            // mas fuerte hacia el final
+            float volume = Mathf.Lerp(0.15f, 0.6f, t);
 
-            // un poco más agudo/deswaitdo
+            // un poco mas agudo/deswaitdo
             float pitch = Mathf.Lerp(0.9f, 1.05f, t);
 
             audioSource.pitch = pitch;

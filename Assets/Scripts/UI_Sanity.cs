@@ -15,7 +15,5 @@ public class UI_Sanity : MonoBehaviour
         bar.value = system.SanityCurrent;
 
         float percent = system.SanityCurrent / system.SanityMax;
-
-        //fill.color = Color.Lerp(Color.red, Color.green, percent);
     }
 }

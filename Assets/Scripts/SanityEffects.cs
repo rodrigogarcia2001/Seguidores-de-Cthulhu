@@ -31,7 +31,7 @@ public class SanityEffects : MonoBehaviour
     [SerializeField] private float speedEntrance = 3f; // antes 0.5
     void Start()
     {
-        // respiración
+        // respiracion
         breathingSound.clip = normalBreathing;
         breathingSound.loop = true;
         breathingSound.Play();
@@ -68,7 +68,7 @@ public class SanityEffects : MonoBehaviour
             {
                 float t = percent / 0.2f;
 
-                // nunca baja de un mínimo antes de morir
+                // nunca baja de un minimo antes de morir
                 volume = Mathf.Lerp(0.2f, 1f, t);
             }
 
@@ -97,7 +97,7 @@ public class SanityEffects : MonoBehaviour
 
         float volumeInsanity = insanityIntensity;
 
-        // aplicar muerte también a locura
+        // aplicar muerte tambien a locura
         if (deathIncoming)
         {
             if (deathTimer < delayBeforeFade)
@@ -108,7 +108,7 @@ public class SanityEffects : MonoBehaviour
             {
                 float t = (deathTimer - delayBeforeFade) * speedFade;
 
-                // curva suave (más natural para audio)
+                // curva suave (mqs natural para audio)
                 float fade = Mathf.Pow(1f - Mathf.Clamp01(t), 2f);
 
                 volumeInsanity *= fade;
@@ -118,7 +118,7 @@ public class SanityEffects : MonoBehaviour
         insanitySound.volume = volumeInsanity;
 
         breathingSound.volume = Mathf.Clamp01(volumeMax * volume);
-        // 75% respiración agitada
+        // 75% respiracion agitada
         if (!deathIncoming)
         {
             if (percent <= 0.65f && currentBreathing != upsetBreathing)
@@ -145,17 +145,6 @@ public class SanityEffects : MonoBehaviour
             DisableEffect25();
         }
     }
-
-    //void CambiarRespiracion(AudioClip clip)
-    //{
-    //    if (deathIncoming) return;
-    //    if (breathingSound.clip == clip) return;
-
-    //    currentBreathing = clip;
-    //    breathingSound.clip = clip;
-    //    breathingSound.loop = true;
-    //    breathingSound.Play();
-    //}
 
     IEnumerator RoutineAleatorySounds()
     {
@@ -187,7 +176,6 @@ public class SanityEffects : MonoBehaviour
     {
         Debug.Log("EFECTO 25%");
 
-        // imagenes
     }
 
     IEnumerator ChangeBreathingSmooth(AudioClip newClip)

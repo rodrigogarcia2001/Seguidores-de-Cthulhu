@@ -10,13 +10,13 @@ public class ControladorMenu : MonoBehaviour
     public GameObject panelPausa;
     public GameObject panelPerder;
     public GameObject panelGanar;
-    public GameObject panelControles; // <-- NUEVO: Referencia al panel de controles
+    public GameObject panelControles;
     private GameObject panelAnterior;
 
     [Header("Botones Menú Principal")]
     public GameObject botonIniciar;
     public GameObject botonSalir;
-    public GameObject botonControles; // <-- NUEVO: (Opcional) Referencia al botón si necesitas ocultarlo
+    public GameObject botonControles;
     public GameObject fondoAzul;
 
     [Header("Sonido del Compañero")]
@@ -24,8 +24,6 @@ public class ControladorMenu : MonoBehaviour
     public AudioClip musicaParaMenu;
 
     private bool estaPausado = false;
-
-    //public CheckpointManager chekpointManager;
 
     void Awake()
     {
@@ -36,7 +34,6 @@ public class ControladorMenu : MonoBehaviour
     {
         AudioListener.volume = 1f;
 
-        // Asegurarnos de que el panel de controles empiece apagado
         if (panelControles != null) panelControles.SetActive(false);
 
         if (audioController == null)
@@ -63,7 +60,7 @@ public class ControladorMenu : MonoBehaviour
 
             if (botonIniciar) botonIniciar.SetActive(false);
             if (botonSalir) botonSalir.SetActive(false);
-            if (botonControles) botonControles.SetActive(false); // Ocultar también este botón
+            if (botonControles) botonControles.SetActive(false);
             if (fondoAzul) fondoAzul.SetActive(false);
         }
     }
@@ -92,15 +89,13 @@ public class ControladorMenu : MonoBehaviour
         }
     }
 
-    // --- NUEVAS FUNCIONES PARA CONTROLES ---
-
-public void AbrirControles()
+    public void AbrirControles()
     {
         if (panelControles != null)
         {
             panelControles.SetActive(true);
             // Ocultamos el pausa al abrir controles
-            if (panelPausa != null) panelPausa.SetActive(false); 
+            if (panelPausa != null) panelPausa.SetActive(false);
         }
     }
 
@@ -113,8 +108,6 @@ public void AbrirControles()
             if (panelPausa != null) panelPausa.SetActive(true);
         }
     }
-
-    // ----------------------------------------
 
     public void EmpezarJuego()
     {

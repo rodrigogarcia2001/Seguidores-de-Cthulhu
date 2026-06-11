@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class InventoryUI : MonoBehaviour
 {
     public InventorySystem inventory;
@@ -12,7 +11,6 @@ public class InventoryUI : MonoBehaviour
         inventory.onInventoryChanged += UpdateUI;
         UpdateUI();
     }
-
     public void UpdateUI()
     {
         for (int i = 0; i < slots.Length; i++)

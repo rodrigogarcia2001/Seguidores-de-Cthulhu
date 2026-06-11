@@ -7,15 +7,9 @@ public class FootstepPlayer : MonoBehaviour
 
     private void Update()
     {
-        Vector3 horizontalVelocity =
-            new Vector3(
-                controller.velocity.x,
-                0f,
-                controller.velocity.z
-            );
+        Vector3 horizontalVelocity = new Vector3(controller.velocity.x, 0f, controller.velocity.z);
 
-        bool isMoving =
-            horizontalVelocity.magnitude > 0.1f;
+        bool isMoving = horizontalVelocity.magnitude > 0.1f;
 
         if (isMoving)
         {

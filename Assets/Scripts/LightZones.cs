@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 public class LightZones : MonoBehaviour
 {
     [SerializeField] private Light light;
-
     private SanitySystem player;
     private bool playerInside = false;
     private bool wasInLight = false;
@@ -15,7 +14,6 @@ public class LightZones : MonoBehaviour
         {
             bool nowInLight = light.enabled;
 
-            // Solo actuar si cambió el estado
             if (nowInLight != wasInLight)
             {
                 if (nowInLight)
@@ -26,11 +24,6 @@ public class LightZones : MonoBehaviour
                 wasInLight = nowInLight;
             }
         }
-
-        //if (Keyboard.current.fKey.wasPressedThisFrame)
-        //{
-        //    light.enabled = !light.enabled; // toggle
-        //}
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -57,5 +50,4 @@ public class LightZones : MonoBehaviour
             player = null;
         }
     }
-
 }

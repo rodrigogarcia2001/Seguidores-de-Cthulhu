@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class CheckPointManager : MonoBehaviour
 {
-    // La variable estática sobrevive al recargar la escena
     public static Vector3 savePosition = Vector3.zero;
     public static bool haveChekpoint = false;
 

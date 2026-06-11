@@ -22,7 +22,7 @@ public class Medbox : MonoBehaviour, IUsable
     {
         if (useSound != null)
             audioSource.PlayOneShot(useSound);
-        
+
         StartCoroutine(ExpandLights());
         StartCoroutine(DestroyLater());
     }
@@ -48,7 +48,6 @@ public class Medbox : MonoBehaviour, IUsable
                 originalLights[i].range = originalRanges[i];
         }
     }
-
     private IEnumerator DestroyLater()
     {
         yield return new WaitForSeconds(duration);

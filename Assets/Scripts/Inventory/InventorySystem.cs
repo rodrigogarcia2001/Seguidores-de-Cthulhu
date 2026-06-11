@@ -6,25 +6,23 @@ public class InventorySystem : MonoBehaviour
 {
     public List<Item> items = new List<Item>();
     public int maxSlots = 5;
-
     public event Action onInventoryChanged; // Uso Action porque no tiene parametros
     public bool AddItem(Item item)
     {
-        if(items.Count >= maxSlots)
+        if (items.Count >= maxSlots)
         {
             Debug.Log("Inventary Full");
             return false;
         }
 
         items.Add(item);
-        onInventoryChanged?.Invoke(); 
+        onInventoryChanged?.Invoke();
         return true;
     }
 
-    // AGREGADO
     public void RemoveItem(int index)
     {
         items.RemoveAt(index);
-        onInventoryChanged?.Invoke(); //
+        onInventoryChanged?.Invoke();
     }
 }

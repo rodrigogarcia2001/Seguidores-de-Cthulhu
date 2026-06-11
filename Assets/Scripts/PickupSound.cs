@@ -13,10 +13,6 @@ public class PickupSound : MonoBehaviour
         if (pickupSound == null)
             return;
 
-        AudioSource.PlayClipAtPoint(
-            pickupSound,
-            transform.position,
-            volume
-        );
+        AudioSource.PlayClipAtPoint(pickupSound, transform.position, volume);
     }
 }

@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class InventoryInput : MonoBehaviour
 {
     public InventorySystem inventory;

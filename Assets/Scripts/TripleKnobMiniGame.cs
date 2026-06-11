@@ -21,27 +21,25 @@ public class TripleKnobMiniGame : MonoBehaviour
     public ElectricalPanel electricalPanel;
 
     [Header("Events")]
-public GameObject triggerEnemy;
-    
+    public GameObject triggerEnemy;
+
     [Header("Light System")]
     public LightSystemManager lightSystemManager;
 
     [Header("Controls")]
     public bool increase;
     public bool decrease;
-
     private float value1 = 0f;
     private float value2 = 0f;
     private float value3 = 0f;
-
     private float correctTime = 0f;
-private bool completed = false;
-    [Header("Audio")]
-public AudioSource audioSource;
-public AudioSource humSource;
-public AudioClip backgroundHum;
+    private bool completed = false;
 
-public AudioClip successSound;
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioSource humSource;
+    public AudioClip backgroundHum;
+    public AudioClip successSound;
 
     void Start()
     {
@@ -88,24 +86,17 @@ public AudioClip successSound;
         value2 = Mathf.Clamp(value2, -halfBar, halfBar);
         value3 = Mathf.Clamp(value3, -halfBar, halfBar);
 
-        indicator1.anchoredPosition =
-            new Vector2(value1, indicator1.anchoredPosition.y);
+        indicator1.anchoredPosition = new Vector2(value1, indicator1.anchoredPosition.y);
 
-        indicator2.anchoredPosition =
-            new Vector2(value2, indicator2.anchoredPosition.y);
+        indicator2.anchoredPosition = new Vector2(value2, indicator2.anchoredPosition.y);
 
-        indicator3.anchoredPosition =
-            new Vector2(value3, indicator3.anchoredPosition.y);
+        indicator3.anchoredPosition = new Vector2(value3, indicator3.anchoredPosition.y);
 
         bool correct1 = IsInZone(indicator1, zone1);
         bool correct2 = IsInZone(indicator2, zone2);
         bool correct3 = IsInZone(indicator3, zone3);
 
-        Debug.Log(
-            "1=" + correct1 +
-            " 2=" + correct2 +
-            " 3=" + correct3
-        );
+        Debug.Log("1=" + correct1 + " 2=" + correct2 + " 3=" + correct3);
 
         if (correct1 && correct2 && correct3)
         {
@@ -138,26 +129,20 @@ public AudioClip successSound;
             center = Random.Range(0.65f, 0.9f);
         }
 
-        float positionX =
-            (center - 0.5f) * bar.rect.width;
+        float positionX = (center - 0.5f) * bar.rect.width;
 
-        zone.anchoredPosition =
-            new Vector2(positionX, 0);
+        zone.anchoredPosition = new Vector2(positionX, 0);
     }
 
     bool IsInZone(RectTransform indicator, RectTransform zone)
     {
-        float min =
-            zone.anchoredPosition.x - zone.rect.width / 2f;
+        float min = zone.anchoredPosition.x - zone.rect.width / 2f;
 
-        float max =
-            zone.anchoredPosition.x + zone.rect.width / 2f;
+        float max = zone.anchoredPosition.x + zone.rect.width / 2f;
 
-        float indicatorPosition =
-            indicator.anchoredPosition.x;
+        float indicatorPosition = indicator.anchoredPosition.x;
 
-        return indicatorPosition >= min &&
-               indicatorPosition <= max;
+        return indicatorPosition >= min && indicatorPosition <= max;
     }
 
     void Complete()
@@ -166,30 +151,30 @@ public AudioClip successSound;
     }
 
     IEnumerator CompleteRoutine()
-{
-    Debug.Log("Triple Panel Repaired");
- humSource.Stop();
-    audioSource.PlayOneShot(successSound);
-
-    if (lightSystemManager != null)
     {
-        lightSystemManager.RepairAllLights();
+        Debug.Log("Triple Panel Repaired");
+        humSource.Stop();
+        audioSource.PlayOneShot(successSound);
+
+        if (lightSystemManager != null)
+        {
+            lightSystemManager.RepairAllLights();
+        }
+
+        if (triggerEnemy != null)
+        {
+            triggerEnemy.SetActive(true);
+        }
+
+        yield return new WaitForSeconds(1f);
+
+        electricalPanel.CloseMiniGame();
     }
 
-    if (triggerEnemy != null)
+    void OnEnable()
     {
-        triggerEnemy.SetActive(true);
+        humSource.clip = backgroundHum;
+        humSource.loop = true;
+        humSource.Play();
     }
-
-    yield return new WaitForSeconds(1f);
-
-    electricalPanel.CloseMiniGame();
-}
-
-void OnEnable()
-{
-    humSource.clip = backgroundHum;
-    humSource.loop = true;
-    humSource.Play();
-}
 }

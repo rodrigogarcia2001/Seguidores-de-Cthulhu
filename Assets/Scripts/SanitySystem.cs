@@ -6,7 +6,6 @@ public class SanitySystem : MonoBehaviour
     [Header("Sanity")]
     [SerializeField] private float sanityMax = 500f;
     [SerializeField] private float sanityCurrent;
-
     public float SanityMax => sanityMax;
     public float SanityCurrent => sanityCurrent;
 
@@ -18,7 +17,6 @@ public class SanitySystem : MonoBehaviour
     [Header("Die")]
     [SerializeField] private GameObject barUI;
     [SerializeField] private PlayerDie playerDie;
-
     private float timeIntoObscure = 0f;
     private bool isDie = false;
 
@@ -32,7 +30,7 @@ public class SanitySystem : MonoBehaviour
 
     void Update()
     {
-        // si está muerto, no hacer nada más
+        // si esta muerto, no hacer nada mas
         if (isDie) return;
 
         bool enLuz = sourceOfLight > 0;
@@ -49,7 +47,7 @@ public class SanitySystem : MonoBehaviour
         else
         {
             timeIntoObscure = 0f;
-            sanityCurrent += recoverPerSecond* Time.deltaTime;
+            sanityCurrent += recoverPerSecond * Time.deltaTime;
         }
 
         sanityCurrent = Mathf.Clamp(sanityCurrent, 0, sanityMax);
@@ -63,7 +61,6 @@ public class SanitySystem : MonoBehaviour
         }
     }
 
-    // estas funciones las llaman las lights
     public void ComeInLight()
     {
         if (isDie) return;

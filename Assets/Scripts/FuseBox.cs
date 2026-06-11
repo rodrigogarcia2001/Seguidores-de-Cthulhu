@@ -7,11 +7,11 @@ public class FuseBox : MonoBehaviour
     public GameObject targetDoor;
     public Renderer[] slotRenderers;
     public Material activeLightMaterial;
-    public GameObject healingZone;        // <-- NUEVO: Arrastra aquí el objeto que cura al jugador
+    public GameObject healingZone;
 
     [Header("Optional Event")]
-public bool startLightsSequence = false;
-public LightsSequenceEvent lightsSequenceEvent;
+    public bool startLightsSequence = false;
+    public LightsSequenceEvent lightsSequenceEvent;
 
     [Header("Audio Settings")]
     public AudioClip insertSound;
@@ -20,20 +20,16 @@ public LightsSequenceEvent lightsSequenceEvent;
 
     [Header("Puzzle Settings")]
     public int requiredFuses = 3;
-
     private int fusesInHand = 0;
     private int fusesPlaced = 0;
-
     private bool isPuzzleCompleted = false;
     private bool isPlayerNearby = false;
-
     private AudioSource audioSource;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
 
-        // OPCIONAL: Nos aseguramos de que la zona empiece apagada por código por si acaso
         if (healingZone != null)
         {
             healingZone.SetActive(false);
@@ -112,7 +108,6 @@ public LightsSequenceEvent lightsSequenceEvent;
             audioSource.PlayOneShot(completeSound);
         }
 
-        // ¡¡AQUÍ ACTIVAMOS LA CURACIÓN!!
         if (healingZone != null)
         {
             healingZone.SetActive(true);
@@ -130,8 +125,8 @@ public LightsSequenceEvent lightsSequenceEvent;
         }
 
         if (startLightsSequence && lightsSequenceEvent != null)
-{
-    lightsSequenceEvent.StartSequence();
-}
+        {
+            lightsSequenceEvent.StartSequence();
+        }
     }
 }

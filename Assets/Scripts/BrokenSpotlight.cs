@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering.Universal; // si usas URP
+using UnityEngine.Rendering.Universal;
 
 public class BrokenSpotlight : MonoBehaviour
 {
@@ -16,23 +16,22 @@ public class BrokenSpotlight : MonoBehaviour
 
     [Header("Final")]
     [SerializeField] private AudioSource audioSource;
-
     [SerializeField] private AudioClip electricityClip;
     [SerializeField] private AudioClip clipBreakdown;
     private bool broken = false;
-private void Start()
-{
-    if (startBroken)
+    private void Start()
     {
-        broken = true;
-
-        foreach (Light l in lights)
+        if (startBroken)
         {
-            l.intensity = 0f;
-            l.enabled = false;
+            broken = true;
+
+            foreach (Light l in lights)
+            {
+                l.intensity = 0f;
+                l.enabled = false;
+            }
         }
     }
-}
     public void DestroySpotlight()
     {
         if (broken || (audioSource != null && audioSource.isPlaying)) return;
@@ -46,7 +45,6 @@ private void Start()
             audioSource.pitch = 1f;
             audioSource.Play();
         }
-        
         StartCoroutine(SecuenceBreakdown());
     }
 
@@ -74,7 +72,7 @@ private void Start()
         }
 
         float timeSync = 0f;
-        float durationSync = 0.5f; // ajust� esto
+        float durationSync = 0.5f;
 
         while (timeSync < durationSync)
         {
@@ -111,7 +109,6 @@ private void Start()
             l.enabled = false;
         }
 
-
         if (audioSource != null)
         {
             audioSource.Stop();
@@ -131,29 +128,21 @@ private void Start()
     }
 
     public void RepairSpotlight()
-{
-    StopAllCoroutines();
-
-    broken = false;
-
-    foreach (Light l in lights)
     {
-        l.enabled = true;
-        l.intensity = intensityNormal;
-    }
+        StopAllCoroutines();
 
-    if (audioSource != null)
-    {
-        audioSource.Stop();
-    }
-}
+        broken = false;
 
-    private void Update()
-    {
-
-        if (Keyboard.current.mKey.wasPressedThisFrame)
+        foreach (Light l in lights)
         {
-            DestroySpotlight();
+            l.enabled = true;
+            l.intensity = intensityNormal;
+        }
+
+        if (audioSource != null)
+        {
+            audioSource.Stop();
         }
     }
+
 }
