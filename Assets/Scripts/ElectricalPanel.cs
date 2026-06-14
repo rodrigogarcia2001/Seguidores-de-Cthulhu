@@ -58,4 +58,10 @@ public class ElectricalPanel : MonoBehaviour
             playerNearby = false;
         }
     }
+
+    public void DisablePanel()
+    {
+        playerNearby = false;
+        GetComponent<BoxCollider>().enabled = false;
+    }
 }

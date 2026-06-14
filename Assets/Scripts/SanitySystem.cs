@@ -1,14 +1,15 @@
 using System.Collections;
 using UnityEngine;
-
+using System;
 public class SanitySystem : MonoBehaviour
 {
     [Header("Sanity")]
     [SerializeField] private float sanityMax = 500f;
     [SerializeField] private float sanityCurrent;
+    public event Action<float> OnSanityChanged;
     public float SanityMax => sanityMax;
     public float SanityCurrent => sanityCurrent;
-
+    private float lastSanity;
     [Header("Obscure")]
     [SerializeField] private float timeBeforeLose = 3f;
     [SerializeField] private float losePerSecond = 5f;
@@ -26,6 +27,8 @@ public class SanitySystem : MonoBehaviour
     void Start()
     {
         sanityCurrent = sanityMax;
+        lastSanity = sanityCurrent;
+        NotifySanityChanged();
     }
 
     void Update()
@@ -51,6 +54,11 @@ public class SanitySystem : MonoBehaviour
         }
 
         sanityCurrent = Mathf.Clamp(sanityCurrent, 0, sanityMax);
+        if (sanityCurrent != lastSanity)
+        {
+            lastSanity = sanityCurrent;
+            NotifySanityChanged();
+        }
 
         // detectar muerte
         if (sanityCurrent <= 0f)
@@ -59,6 +67,11 @@ public class SanitySystem : MonoBehaviour
             isDie = true;
             StartCoroutine(DieRoutine());
         }
+    }
+
+    private void NotifySanityChanged()
+    {
+        OnSanityChanged?.Invoke(sanityCurrent);
     }
 
     public void ComeInLight()

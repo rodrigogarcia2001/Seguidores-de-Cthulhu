@@ -8,12 +8,22 @@ public class UI_Sanity : MonoBehaviour
     void Start()
     {
         bar.maxValue = system.SanityMax;
+
+        system.OnSanityChanged += UpdateBar;
+
+        UpdateBar(system.SanityCurrent);
     }
 
-    void Update()
+    private void UpdateBar(float value)
     {
-        bar.value = system.SanityCurrent;
+        bar.value = value;
+    }
 
-        float percent = system.SanityCurrent / system.SanityMax;
+    private void OnDestroy()
+    {
+        if (system != null)
+        {
+            system.OnSanityChanged -= UpdateBar;
+        }
     }
 }

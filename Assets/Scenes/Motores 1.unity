@@ -38687,17 +38687,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e6742bcf1c6e53248b7eca542e7c70e6, type: 3}
   m_PrefabInstance: {fileID: 972025122}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &762386982 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8604249979875462269, guid: ec961ea811535dc4fa726c18c9b203c7, type: 3}
-  m_PrefabInstance: {fileID: 8928012575165828413}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a6b6a6d2369ae64e9adccc8b484cc93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!1001 &763121671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39362,7 +39351,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 30}
+  m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &797362492
 MonoBehaviour:
@@ -52977,7 +52966,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13
+      value: -30.2
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -52985,7 +52974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -32.45
+      value: -8.6
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalRotation.w
@@ -53859,10 +53848,10 @@ RectTransform:
   m_Children:
   - {fileID: 1379396136}
   - {fileID: 1182698323}
+  - {fileID: 517954617}
   - {fileID: 503262024}
   - {fileID: 1114092093}
   - {fileID: 698271109}
-  - {fileID: 517954617}
   m_Father: {fileID: 1976454023}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -69240,6 +69229,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1380060715 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8604249979875462269, guid: ec961ea811535dc4fa726c18c9b203c7, type: 3}
+  m_PrefabInstance: {fileID: 315782500}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380060708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6b6a6d2369ae64e9adccc8b484cc93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1384476587 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5050831410158161360, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
@@ -77898,7 +77898,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 30}
+  m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1516143206
 MonoBehaviour:
@@ -84447,6 +84447,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4562b46d1f5adbd4792d3b6db898a1c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  onPuzzleCompleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1212016774}
+        m_TargetAssemblyTypeName: LightSystemManager, Assembly-CSharp
+        m_MethodName: RepairAllLights
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1691928506}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1380060715}
+        m_TargetAssemblyTypeName: ElectricalPanel, Assembly-CSharp
+        m_MethodName: DisablePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPuzzleFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1380060715}
+        m_TargetAssemblyTypeName: ElectricalPanel, Assembly-CSharp
+        m_MethodName: CloseMiniGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   bar1: {fileID: 1144127292}
   bar2: {fileID: 651072967}
   bar3: {fileID: 1978657597}
@@ -84456,9 +84510,6 @@ MonoBehaviour:
   zone1: {fileID: 797362491}
   zone2: {fileID: 2071553786}
   zone3: {fileID: 1516143205}
-  electricalPanel: {fileID: 762386982}
-  triggerEnemy: {fileID: 1691928506}
-  lightSystemManager: {fileID: 1212016774}
   increase: 0
   decrease: 0
   audioSource: {fileID: 503262025}
@@ -101107,7 +101158,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 30}
+  m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2071553787
 MonoBehaviour:
