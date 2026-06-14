@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class FuseBox : MonoBehaviour
+public class KeyDoor : MonoBehaviour
 {
     [Header("References to Assign")]
     public GameObject targetDoor;
@@ -19,9 +19,8 @@ public class FuseBox : MonoBehaviour
     public AudioClip completeSound;
 
     [Header("Puzzle Settings")]
-    public int requiredFuses = 3;
-    private int fusesInHand = 0;
-    private int fusesPlaced = 0;
+    public int requiredKeys = 3;
+    private int keysPlaced = 0;
     private bool isPuzzleCompleted = false;
     private bool isPlayerNearby = false;
     private AudioSource audioSource;
@@ -34,12 +33,6 @@ public class FuseBox : MonoBehaviour
         {
             healingZone.SetActive(false);
         }
-    }
-
-    public void PickUpFuse()
-    {
-        fusesInHand++;
-        Debug.Log("Recogiste un fusible. Tienes " + fusesInHand + " en la mano.");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -62,9 +55,9 @@ public class FuseBox : MonoBehaviour
     {
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E) && !isPuzzleCompleted)
         {
-            if (FuseCounter.Instance.CurrentFuses > 0)
+            if (KeyCounter.Instance.CurrentKeys > 0)
             {
-                PlaceFuse();
+                PlaceKey();
             }
             else
             {
@@ -72,28 +65,28 @@ public class FuseBox : MonoBehaviour
                 {
                     audioSource.PlayOneShot(errorSound);
                 }
-                Debug.Log("No tienes fusibles en la mano para colocar.");
+                Debug.Log("No tienes llaves para colocar.");
             }
         }
     }
 
-    private void PlaceFuse()
+    private void PlaceKey()
     {
-        FuseCounter.Instance.RemoveFuse();
+        KeyCounter.Instance.RemoveKey();
 
         if (insertSound != null)
         {
             audioSource.PlayOneShot(insertSound);
         }
 
-        if (fusesPlaced < slotRenderers.Length && slotRenderers[fusesPlaced] != null)
+        if (keysPlaced < slotRenderers.Length && slotRenderers[keysPlaced] != null)
         {
-            slotRenderers[fusesPlaced].material = activeLightMaterial;
+            slotRenderers[keysPlaced].material = activeLightMaterial;
         }
 
-        fusesPlaced++;
+        keysPlaced++;
 
-        if (fusesPlaced >= requiredFuses)
+        if (keysPlaced >= requiredKeys)
         {
             CompletePuzzle();
         }
