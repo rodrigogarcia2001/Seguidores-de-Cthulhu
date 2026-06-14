@@ -12,7 +12,14 @@ public class FuseCounter : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
+        Debug.Log("FuseCounter inicializado");
     }
 
     public void AddFuse()

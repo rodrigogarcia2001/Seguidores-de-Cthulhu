@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class LightZones : MonoBehaviour
 {
-    [SerializeField] private Light light;
+    [SerializeField] private Light zoneLight;
     private SanitySystem player;
     private bool playerInside = false;
     private bool wasInLight = false;
@@ -12,7 +12,7 @@ public class LightZones : MonoBehaviour
     {
         if (playerInside && player != null)
         {
-            bool nowInLight = light.enabled;
+            bool nowInLight = zoneLight.enabled;
 
             if (nowInLight != wasInLight)
             {
@@ -32,9 +32,9 @@ public class LightZones : MonoBehaviour
             playerInside = true;
             player = other.GetComponent<SanitySystem>();
 
-            wasInLight = light.enabled;
+            wasInLight = zoneLight.enabled;
 
-            if (light.enabled)
+            if (zoneLight.enabled)
                 player?.ComeInLight();
         }
     }
@@ -43,7 +43,7 @@ public class LightZones : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (light.enabled)
+            if (zoneLight.enabled)
                 player?.OutOfLight();
 
             playerInside = false;

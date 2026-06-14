@@ -29,7 +29,7 @@ public class Medbox : MonoBehaviour, IUsable
 
     private IEnumerator ExpandLights()
     {
-        originalLights = FindObjectsOfType<Light>();
+        originalLights = FindObjectsByType<Light>(FindObjectsSortMode.None);
         originalRanges = new float[originalLights.Length];
 
         // guardar y aumentar

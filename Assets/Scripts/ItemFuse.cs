@@ -2,10 +2,7 @@ using UnityEngine;
 
 public class ItemFuse : MonoBehaviour
 {
-    [Header("Settings")]
-    public string fuseName = "Standard Fuse";
-    [SerializeField] private FuseBox targetFuseBox;
-    private bool isPlayerNearby = false;
+    private bool isPlayerNearby;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,16 +16,13 @@ public class ItemFuse : MonoBehaviour
             isPlayerNearby = false;
     }
 
-    void Update()
+    private void Update()
     {
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
         {
-            if (targetFuseBox != null)
-            {
-                targetFuseBox.PickUpFuse();
-                GetComponent<PickupSound>()?.Play();
-                Destroy(gameObject);
-            }
+            FuseCounter.Instance.AddFuse();
+            GetComponent<PickupSound>()?.Play();
+            Destroy(gameObject);
         }
     }
 }

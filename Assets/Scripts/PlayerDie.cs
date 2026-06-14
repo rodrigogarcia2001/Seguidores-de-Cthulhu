@@ -10,7 +10,7 @@ public class PlayerDie : MonoBehaviour
     [SerializeField] private GameObject screenGameOver;
 
     [Header("Referencias")]
-    [SerializeField] private Camera camera;
+    [SerializeField] private Camera playerCamera;
     [SerializeField] private Volume volume;
     [SerializeField] private MonoBehaviour controlCamera;
     [SerializeField] private CanvasGroup blackFade;
@@ -48,7 +48,7 @@ public class PlayerDie : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(3.5f);
         yield return null; // 1 frame
-        StartCoroutine(ReduceBeatsSmooth());
+        StartCoroutine(ReduceBeatsSmooth()); 
         //  PRIMER sonido (el importante)
         StartCoroutine(ReproduceMemorySmooth());
         yield return new WaitForSecondsRealtime(0.2f);
@@ -68,7 +68,7 @@ public class PlayerDie : MonoBehaviour
         float vignetteInicial = vignette.intensity.value;
         float smoothInicial = vignette.smoothness.value;
 
-        Vector3 rotInicial = camera.transform.eulerAngles;
+        Vector3 rotInicial = playerCamera.transform.eulerAngles;
         Vector3 rotFinal = new Vector3(-80f, rotInicial.y, rotInicial.z); // mirar al cielo
 
         while (time < duration)
@@ -78,7 +78,7 @@ public class PlayerDie : MonoBehaviour
             float t = Mathf.SmoothStep(0f, 1f, time / duration);
 
             // 1. Rotar camara hacia arriba
-            camera.transform.eulerAngles = Vector3.Lerp(rotInicial, rotFinal, t);
+            playerCamera.transform.eulerAngles = Vector3.Lerp(rotInicial, rotFinal, t);
 
             // 2. Aumentar bloom
             float tSuave = Mathf.SmoothStep(0f, 1f, t);

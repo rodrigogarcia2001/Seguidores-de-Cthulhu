@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 2078799021}
+  zoneLight: {fileID: 2078799021}
 --- !u!135 &1046262
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 0}
+  zoneLight: {fileID: 1633373129}
 --- !u!135 &3391693
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1014,7 +1014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 1421227260}
+  zoneLight: {fileID: 1421227260}
 --- !u!135 &11176533
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1310,6 +1310,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!108 &20210051 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
+  m_PrefabInstance: {fileID: 1530721709}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &23113506 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3134011184950170910, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
@@ -7205,7 +7210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 777034295}
+  zoneLight: {fileID: 777034295}
 --- !u!135 &55672110
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9896,7 +9901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 945722809}
+  zoneLight: {fileID: 945722809}
 --- !u!135 &131487450
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11919,6 +11924,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!108 &184143663 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
+  m_PrefabInstance: {fileID: 839107793}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &194876689 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8933610462300518685, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
@@ -18016,7 +18026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 474055234}
+  zoneLight: {fileID: 474055234}
 --- !u!135 &352440375
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -22572,7 +22582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 0}
+  zoneLight: {fileID: 20210051}
 --- !u!135 &473987651
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -26598,7 +26608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 0}
+  zoneLight: {fileID: 184143663}
 --- !u!135 &563757968
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -33332,7 +33342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 448805952}
+  zoneLight: {fileID: 448805952}
 --- !u!135 &616854504
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -33366,6 +33376,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2790395674627363494, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
+      propertyPath: zoneLight
+      value: 
+      objectReference: {fileID: 62088707}
     - target: {fileID: 5943126292394619612, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
       propertyPath: m_LocalScale.x
       value: 4
@@ -33933,7 +33947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 270256956}
+  zoneLight: {fileID: 270256956}
 --- !u!135 &628321673
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -34179,7 +34193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 454618522}
+  zoneLight: {fileID: 454618522}
 --- !u!135 &636449040
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -34691,6 +34705,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2790395674627363494, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
+      propertyPath: zoneLight
+      value: 
+      objectReference: {fileID: 1037829632}
     - target: {fileID: 5943126292394619612, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
       propertyPath: m_LocalScale.x
       value: 4
@@ -35772,7 +35790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 1351528088}
+  zoneLight: {fileID: 1351528088}
 --- !u!135 &681861903
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -36992,7 +37010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 0}
+  zoneLight: {fileID: 1159356600}
 --- !u!135 &718499793
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -37518,6 +37536,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!108 &724903680 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
+  m_PrefabInstance: {fileID: 382594227}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &725423796
 GameObject:
   m_ObjectHideFlags: 0
@@ -40837,7 +40860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 1095369239}
+  zoneLight: {fileID: 1095369239}
 --- !u!135 &837072840
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -40893,8 +40916,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 39.799892, y: 14.700042}
-  m_SizeDelta: {x: 120, y: 110}
+  m_AnchoredPosition: {x: 2.2697816, y: 27.536972}
+  m_SizeDelta: {x: 74.9399, y: 84.3261}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &837133960
 MonoBehaviour:
@@ -40982,7 +41005,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 18.028576, z: -18.1669, w: -15.372025}
+  m_margin: {x: 0, y: 0.21396638, z: 0.6955111, w: -0.17728424}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -51569,6 +51592,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!108 &975490979 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
+  m_PrefabInstance: {fileID: 265356134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &986912055
 GameObject:
   m_ObjectHideFlags: 0
@@ -53225,7 +53253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: SprintSpeed
-      value: 5.5
+      value: 50.5
       objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: RotationSpeed
@@ -53513,7 +53541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 845980223}
+  zoneLight: {fileID: 845980223}
 --- !u!135 &1037185748
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -59411,7 +59439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 1982105032}
+  zoneLight: {fileID: 1982105032}
 --- !u!135 &1076981305
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -59724,7 +59752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 408674025}
+  zoneLight: {fileID: 408674025}
 --- !u!135 &1094452468
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -60063,6 +60091,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!108 &1098540259 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
+  m_PrefabInstance: {fileID: 2135341915}
+  m_PrefabAsset: {fileID: 0}
 --- !u!108 &1105001551 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 4263132588348828024, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
@@ -60669,7 +60702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 0}
+  zoneLight: {fileID: 1329141768}
 --- !u!135 &1123492702
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -62069,7 +62102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 0}
+  zoneLight: {fileID: 1098540259}
 --- !u!135 &1153733186
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -62125,6 +62158,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!108 &1159356600 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
+  m_PrefabInstance: {fileID: 829604851}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1160756073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62137,6 +62175,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2790395674627363494, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
+      propertyPath: zoneLight
+      value: 
+      objectReference: {fileID: 1925921983}
     - target: {fileID: 5943126292394619612, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
       propertyPath: m_LocalScale.x
       value: 4
@@ -64387,7 +64429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 0}
+  zoneLight: {fileID: 724903680}
 --- !u!135 &1225793984
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -65818,7 +65860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 1037829632}
+  zoneLight: {fileID: 1037829632}
 --- !u!135 &1258980042
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -65992,7 +66034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 0}
+  zoneLight: {fileID: 1925921983}
 --- !u!135 &1261072381
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -68247,6 +68289,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!108 &1329141768 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
+  m_PrefabInstance: {fileID: 370599902}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1331101327 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400006, guid: 8c088c51437f8e84c8ccf368945d30c0, type: 3}
@@ -69623,7 +69670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 1698748724}
+  zoneLight: {fileID: 1698748724}
 --- !u!135 &1385247220
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -76574,7 +76621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 1733817121}
+  zoneLight: {fileID: 1733817121}
 --- !u!135 &1462045128
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -78236,7 +78283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 1552299426}
+  zoneLight: {fileID: 1552299426}
 --- !u!135 &1512377402
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -79226,7 +79273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 519253255}
+  zoneLight: {fileID: 519253255}
 --- !u!135 &1543844696
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -79903,6 +79950,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2790395674627363494, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
+      propertyPath: zoneLight
+      value: 
+      objectReference: {fileID: 1095369239}
     - target: {fileID: 5943126292394619612, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
       propertyPath: m_LocalScale.x
       value: 4
@@ -80789,6 +80840,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 2879569883304208982, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
+      propertyPath: targetFuseBox
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3134011184950170910, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
       propertyPath: m_LocalPosition.x
       value: 45.83
@@ -80829,6 +80884,10 @@ PrefabInstance:
       propertyPath: light
       value: 
       objectReference: {fileID: 1105001551}
+    - target: {fileID: 3959284708224174346, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
+      propertyPath: zoneLight
+      value: 
+      objectReference: {fileID: 1105001551}
     - target: {fileID: 4253457703833654006, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
       propertyPath: m_Name
       value: Key3
@@ -80844,6 +80903,14 @@ PrefabInstance:
     - target: {fileID: 4635419587536631117, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729599013302966033, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
+      propertyPath: targetFuseBox
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363706415859023742, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
+      propertyPath: targetFuseBox
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5585600909686671872, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
       propertyPath: m_LocalPosition.x
@@ -80913,6 +80980,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 61.65
       objectReference: {fileID: 0}
+    - target: {fileID: 8214424883821831023, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
+      propertyPath: zoneLight
+      value: 
+      objectReference: {fileID: 1105001551}
     - target: {fileID: 8647985704611763090, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -80923,6 +80994,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1576342371883058663, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
+    - {fileID: 4729599013302966033, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
+    - {fileID: 2879569883304208982, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
+    - {fileID: 5363706415859023742, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6302837680511630524, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
@@ -81077,7 +81151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 2007757880}
+  zoneLight: {fileID: 2007757880}
 --- !u!135 &1579661065
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -83517,6 +83591,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!108 &1633373129 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
+  m_PrefabInstance: {fileID: 1810632363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1639199737
 GameObject:
   m_ObjectHideFlags: 0
@@ -83562,7 +83641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 0}
+  zoneLight: {fileID: 975490979}
 --- !u!135 &1639199740
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -83944,7 +84023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 1990657477}
+  zoneLight: {fileID: 1990657477}
 --- !u!135 &1652215920
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -84311,7 +84390,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 7, y: -14.7}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1682961166
 MonoBehaviour:
@@ -84647,7 +84726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   screenGameOver: {fileID: 0}
-  camera: {fileID: 1743058261}
+  playerCamera: {fileID: 1743058261}
   volume: {fileID: 832575518}
   controlCamera: {fileID: 0}
   blackFade: {fileID: 517954620}
@@ -89023,7 +89102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 687164578}
+  zoneLight: {fileID: 687164578}
 --- !u!135 &1810710710
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -91001,6 +91080,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2790395674627363494, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
+      propertyPath: zoneLight
+      value: 
+      objectReference: {fileID: 2007757880}
     - target: {fileID: 5943126292394619612, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
       propertyPath: m_LocalScale.x
       value: 4
@@ -91447,7 +91530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 62088707}
+  zoneLight: {fileID: 62088707}
 --- !u!135 &1883035954
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -91681,7 +91764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 1722688478}
+  zoneLight: {fileID: 1722688478}
 --- !u!135 &1890089428
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -92915,6 +92998,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!108 &1925921983 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 7813663425045420209, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
+  m_PrefabInstance: {fileID: 1160756073}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1931740891
 GameObject:
   m_ObjectHideFlags: 0
@@ -95389,7 +95477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 1299146461}
+  zoneLight: {fileID: 1299146461}
 --- !u!135 &2001993089
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -102084,7 +102172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 425245974}
+  zoneLight: {fileID: 425245974}
 --- !u!135 &2080054289
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -102309,6 +102397,10 @@ PrefabInstance:
       propertyPath: light
       value: 
       objectReference: {fileID: 1206360061}
+    - target: {fileID: 3959284708224174346, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
+      propertyPath: zoneLight
+      value: 
+      objectReference: {fileID: 1206360061}
     - target: {fileID: 5102537431275098298, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -102377,6 +102469,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 44.28
       objectReference: {fileID: 0}
+    - target: {fileID: 8214424883821831023, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
+      propertyPath: zoneLight
+      value: 
+      objectReference: {fileID: 1206360061}
     - target: {fileID: 8291510446100208629, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -102596,6 +102692,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2790395674627363494, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
+      propertyPath: zoneLight
+      value: 
+      objectReference: {fileID: 1421227260}
     - target: {fileID: 5943126292394619612, guid: 3549ac6a269db184fb1a8c12b80a2c24, type: 3}
       propertyPath: m_LocalScale.x
       value: 4
@@ -104539,6 +104639,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 4492019090141211335, guid: 406eaaa28aea16a4e83da631f9739f92, type: 3}
+      propertyPath: zoneLight
+      value: 
+      objectReference: {fileID: 2362648767026642863}
     - target: {fileID: 4602902763080987161, guid: 406eaaa28aea16a4e83da631f9739f92, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -104627,6 +104731,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 7160800564960158098, guid: 406eaaa28aea16a4e83da631f9739f92, type: 3}
+      propertyPath: zoneLight
+      value: 
+      objectReference: {fileID: 2362648767026642863}
     - target: {fileID: 7227740072439996951, guid: 406eaaa28aea16a4e83da631f9739f92, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
