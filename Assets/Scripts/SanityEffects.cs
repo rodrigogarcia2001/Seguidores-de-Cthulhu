@@ -1,7 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 public class SanityEffects : MonoBehaviour
 {
+
+    [SerializeField] private Volume postProcessVolume;
+    private Vignette vignette;
+    private ChromaticAberration chromatic;
+
     [Header("References")]
     [SerializeField] private SanitySystem system;
 
@@ -31,6 +38,10 @@ public class SanityEffects : MonoBehaviour
     [SerializeField] private float speedEntrance = 3f; // antes 0.5
     void Start()
     {
+
+        postProcessVolume.profile.TryGet(out vignette);
+        postProcessVolume.profile.TryGet(out chromatic);
+
         // respiracion
         breathingSound.clip = normalBreathing;
         breathingSound.loop = true;
@@ -51,10 +62,21 @@ public class SanityEffects : MonoBehaviour
 
         if (percent <= 0.5f)
         {
+            if (vignette != null)
+            {
+                vignette.active = true;
+                vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 0.8f, Time.deltaTime * 0.6f);
+chromatic.intensity.value = Mathf.Lerp(chromatic.intensity.value, 1f * insanityIntensity, Time.deltaTime * 0.7f);
+            }
             insanityIntensity = Mathf.Lerp(insanityIntensity, 1f, Time.deltaTime * speedEntrance);
         }
         else
         {
+            if (vignette != null)
+            {
+                vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 0.2f, Time.deltaTime * 2f);
+                chromatic.intensity.value = Mathf.Lerp(chromatic.intensity.value, 0f * insanityIntensity, Time.deltaTime * 3f);
+            }
             insanityIntensity = Mathf.Lerp(insanityIntensity, 0f, Time.deltaTime * speedEntrance);
         }
 

@@ -8487,6 +8487,77 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &94659017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 94659018}
+  - component: {fileID: 94659020}
+  - component: {fileID: 94659019}
+  m_Layer: 0
+  m_Name: TriggerParaParticulasPasiloLargo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &94659018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94659017}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -143.41, y: -6.35, z: -4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 363000325}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &94659019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94659017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea8c0d11ad3b254782496f80ab6fa6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleRouteTrigger
+  guide: {fileID: 773915869}
+  routePoints:
+  - {fileID: 1612681933}
+  - {fileID: 2119389748}
+  - {fileID: 518900415}
+--- !u!65 &94659020
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94659017}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.0464263, y: 9.131586, z: 1}
+  m_Center: {x: -1.4891274, y: 0.82488394, z: 0}
 --- !u!4 &95374107 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4231213078265552, guid: 6d0f69892e260164b9b56372f7556fdb, type: 3}
@@ -11929,37 +12000,6 @@ Light:
   m_CorrespondingSourceObject: {fileID: 1534826612512213551, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
   m_PrefabInstance: {fileID: 839107793}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &184865136
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 184865137}
-  m_Layer: 0
-  m_Name: PuntoC
-  m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &184865137
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184865136}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 160.3, y: 0, z: 39.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1763286571}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &194876689 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8933610462300518685, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
@@ -14948,7 +14988,7 @@ GameObject:
   m_Component:
   - component: {fileID: 282444039}
   m_Layer: 0
-  m_Name: PuntoA (2)
+  m_Name: PuntoPartFinal3
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -17349,6 +17389,7 @@ MonoBehaviour:
   - {fileID: 1299146473}
   - {fileID: 1870140577}
   delayBetweenLights: 6
+  triggerToActivate: {fileID: 798140376}
 --- !u!4 &330955113
 Transform:
   m_ObjectHideFlags: 0
@@ -17361,7 +17402,8 @@ Transform:
   m_LocalPosition: {x: -22.808334, y: 0.36303997, z: -11.709373}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 798140379}
   m_Father: {fileID: 585601758}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &336676445 stripped
@@ -18155,6 +18197,7 @@ GameObject:
   - component: {fileID: 353974126}
   - component: {fileID: 353974128}
   - component: {fileID: 353974127}
+  - component: {fileID: 353974129}
   m_Layer: 0
   m_Name: TriggerFocoRoto 2
   m_TagString: Untagged
@@ -18215,6 +18258,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.0464263, y: 9.131586, z: 1}
   m_Center: {x: -1.4891274, y: 0.82488394, z: 0}
+--- !u!114 &353974129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353974125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea8c0d11ad3b254782496f80ab6fa6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleRouteTrigger
+  guide: {fileID: 773915869}
+  routePoints:
+  - {fileID: 1139928654}
+  - {fileID: 668459599}
+  - {fileID: 1584200429}
 --- !u!4 &354187755 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400006, guid: 8c088c51437f8e84c8ccf368945d30c0, type: 3}
@@ -18443,6 +18503,7 @@ Transform:
   - {fileID: 814601185}
   - {fileID: 1828485422}
   - {fileID: 353974126}
+  - {fileID: 94659018}
   m_Father: {fileID: 851349893}
   m_LocalEulerAnglesHint: {x: 0, y: 360, z: 0}
 --- !u!1 &365084672
@@ -25106,7 +25167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 518900415}
   m_Layer: 0
-  m_Name: PuntoA (2)
+  m_Name: PuntoPart9
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -26363,7 +26424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 549962241}
   m_Layer: 0
-  m_Name: PuntoA
+  m_Name: PuntoPartFinal1
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -34056,6 +34117,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e125b018391583499711df847368c9a, type: 3}
   m_PrefabInstance: {fileID: 625929107}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &626372404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 626372405}
+  - component: {fileID: 626372407}
+  - component: {fileID: 626372406}
+  m_Layer: 0
+  m_Name: TriggerParaParticulas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &626372405
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626372404}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 127.5, y: 3.6917896, z: 100.23}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1691928507}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &626372406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626372404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea8c0d11ad3b254782496f80ab6fa6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleRouteTrigger
+  guide: {fileID: 773915869}
+  routePoints:
+  - {fileID: 549962241}
+  - {fileID: 1956027134}
+  - {fileID: 282444039}
+--- !u!65 &626372407
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626372404}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.0464263, y: 9.131586, z: 1}
+  m_Center: {x: -1.4891274, y: 0.82488394, z: 0}
 --- !u!1 &626727904 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5463869614582699643, guid: e337d38de5350884a94d07daf07d69c9, type: 3}
@@ -35656,7 +35788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 668459599}
   m_Layer: 0
-  m_Name: PuntoB
+  m_Name: PuntoPart5
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -39539,7 +39671,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -39856,7 +39988,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 100
+    maxNumParticles: 1000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -40560,9 +40692,9 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0.39215687}
+        key0: {r: 1, g: 1, b: 1, a: 0.5882353}
         key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 1, g: 1, b: 1, a: 0.39215687}
+        key2: {r: 1, g: 1, b: 1, a: 0.5882353}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -44536,6 +44668,7 @@ GameObject:
   - component: {fileID: 796049283}
   - component: {fileID: 796049285}
   - component: {fileID: 796049284}
+  - component: {fileID: 796049286}
   m_Layer: 0
   m_Name: TriggerEnemy5
   m_TagString: Untagged
@@ -44595,6 +44728,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.0464263, y: 9.131586, z: 1}
   m_Center: {x: -1.4891274, y: 0.82488394, z: 0}
+--- !u!114 &796049286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796049282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea8c0d11ad3b254782496f80ab6fa6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleRouteTrigger
+  guide: {fileID: 773915869}
+  routePoints:
+  - {fileID: 1661046197}
+  - {fileID: 1144741161}
+  - {fileID: 1401557209}
 --- !u!1 &796840180
 GameObject:
   m_ObjectHideFlags: 0
@@ -44706,6 +44856,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797362490}
   m_CullTransparentMesh: 1
+--- !u!1 &798140376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 798140379}
+  - component: {fileID: 798140378}
+  - component: {fileID: 798140377}
+  m_Layer: 0
+  m_Name: TriggerParticulasFinal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &798140377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798140376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea8c0d11ad3b254782496f80ab6fa6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleRouteTrigger
+  guide: {fileID: 773915869}
+  routePoints:
+  - {fileID: 1210978602}
+  - {fileID: 1051932127}
+--- !u!65 &798140378
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798140376}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 15.498222, y: 9.131586, z: 9.505157}
+  m_Center: {x: -6.715027, y: 0.82488394, z: -4.2525806}
+--- !u!4 &798140379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798140376}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 95.82, y: 2.5829997, z: 26.352882}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 330955113}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &800536714
 GameObject:
   m_ObjectHideFlags: 0
@@ -58449,7 +58669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: SprintSpeed
-      value: 5.5
+      value: 50.5
       objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: RotationSpeed
@@ -59181,7 +59401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1051932127}
   m_Layer: 0
-  m_Name: PuntoB
+  m_Name: PuntoPartFinalVuelta2
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -59196,7 +59416,7 @@ Transform:
   m_GameObject: {fileID: 1051932126}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 160.3, y: 0, z: -4.1}
+  m_LocalPosition: {x: 15.62, y: 0, z: -7.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64631,7 +64851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076229348}
   m_Layer: 0
-  m_Name: Punto3
+  m_Name: PuntoPart3
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -66795,7 +67015,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1139928654}
   m_Layer: 0
-  m_Name: PuntoA
+  m_Name: PuntoPart4
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -67160,7 +67380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1144741161}
   m_Layer: 0
-  m_Name: PuntoB
+  m_Name: PuntoPartFinal5
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -67175,7 +67395,7 @@ Transform:
   m_GameObject: {fileID: 1144741160}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2, y: 0, z: 71}
+  m_LocalPosition: {x: 6.27, y: 0, z: 154.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -68842,7 +69062,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1210978602}
   m_Layer: 0
-  m_Name: PuntoA
+  m_Name: PuntoPartFinalVuelta1
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -68857,7 +69077,7 @@ Transform:
   m_GameObject: {fileID: 1210978601}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.7, y: 0, z: -5.5}
+  m_LocalPosition: {x: 145, y: 0, z: -7.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -75698,6 +75918,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1401557208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1401557209}
+  m_Layer: 0
+  m_Name: PuntoPartFinal6
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1401557209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401557208}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 24.82, y: 0, z: 154.94}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1537114021}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1407585590
 GameObject:
   m_ObjectHideFlags: 0
@@ -84450,6 +84701,7 @@ Transform:
   m_Children:
   - {fileID: 1661046197}
   - {fileID: 1144741161}
+  - {fileID: 1401557209}
   m_Father: {fileID: 800536715}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1538769544 stripped
@@ -86632,7 +86884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1584200429}
   m_Layer: 0
-  m_Name: PuntoC
+  m_Name: PuntoPart6
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -88310,7 +88562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1612681933}
   m_Layer: 0
-  m_Name: PuntoA
+  m_Name: PuntoPart7
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -88325,7 +88577,7 @@ Transform:
   m_GameObject: {fileID: 1612681932}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.46, y: 0, z: -208.14}
+  m_LocalPosition: {x: 2.46, y: 0, z: -211.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -89619,7 +89871,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1661046197}
   m_Layer: 0
-  m_Name: PuntoA
+  m_Name: PuntoPartFinal4
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -89634,7 +89886,7 @@ Transform:
   m_GameObject: {fileID: 1661046196}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2, y: 0, z: -5.5}
+  m_LocalPosition: {x: 7.37, y: 0, z: 23.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -90320,6 +90572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f67e30bc7ecfe74aa6cb43bca11ff33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  postProcessVolume: {fileID: 832575518}
   system: {fileID: 1687248299}
   breathingSound: {fileID: 1687248307}
   insanitySound: {fileID: 1573869567}
@@ -90748,6 +91001,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 626372405}
   - {fileID: 2043489171}
   - {fileID: 796049283}
   - {fileID: 2013763446}
@@ -92866,7 +93120,6 @@ Transform:
   m_Children:
   - {fileID: 1210978602}
   - {fileID: 1051932127}
-  - {fileID: 184865137}
   m_Father: {fileID: 800536715}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1769529255
@@ -93903,7 +94156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1797892837}
   m_Layer: 0
-  m_Name: Punto1
+  m_Name: PuntoPart1
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -99184,7 +99437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1945231942}
   m_Layer: 0
-  m_Name: Punto2
+  m_Name: PuntoPart2
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -99425,7 +99678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1956027134}
   m_Layer: 0
-  m_Name: PuntoA (1)
+  m_Name: PuntoPartFinal2
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -100595,6 +100848,7 @@ MonoBehaviour:
   routePoints:
   - {fileID: 1797892837}
   - {fileID: 1945231942}
+  - {fileID: 1076229348}
 --- !u!1 &1995238933
 GameObject:
   m_ObjectHideFlags: 0
@@ -109265,7 +109519,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2119389748}
   m_Layer: 0
-  m_Name: PuntoA (1)
+  m_Name: PuntoPart8
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -110427,6 +110681,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6141900996580348364, guid: 406eaaa28aea16a4e83da631f9739f92, type: 3}
+      propertyPath: m_Radius
+      value: 4.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6284512136283141968, guid: 406eaaa28aea16a4e83da631f9739f92, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -110438,6 +110696,10 @@ PrefabInstance:
     - target: {fileID: 6406460561751048715, guid: 406eaaa28aea16a4e83da631f9739f92, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462232650900664168, guid: 406eaaa28aea16a4e83da631f9739f92, type: 3}
+      propertyPath: m_Radius
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 6484561035448838585, guid: 406eaaa28aea16a4e83da631f9739f92, type: 3}
       propertyPath: m_StaticEditorFlags

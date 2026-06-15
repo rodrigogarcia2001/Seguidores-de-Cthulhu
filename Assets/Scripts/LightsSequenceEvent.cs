@@ -6,7 +6,8 @@ public class LightsSequenceEvent : MonoBehaviour
 {
     [SerializeField] private List<BrokenSpotlight> spotlights;
     [SerializeField] private float delayBetweenLights = 1.5f;
-
+    [Header("Trigger Activation")]
+    [SerializeField] private GameObject triggerToActivate;
     public void StartSequence()
     {
         StartCoroutine(BreakSequence());
@@ -14,6 +15,11 @@ public class LightsSequenceEvent : MonoBehaviour
 
     private IEnumerator BreakSequence()
     {
+        if (triggerToActivate != null)
+        {
+            triggerToActivate.SetActive(true);
+        }
+
         foreach (BrokenSpotlight spotlight in spotlights)
         {
             if (spotlight != null)
