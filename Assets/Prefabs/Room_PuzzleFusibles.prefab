@@ -639,7 +639,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6ab09681ba624d64fb2378e0ee6f6664, type: 2}
+  - {fileID: 2100000, guid: 254d325dc5f19d248a02b7163c5f5679, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -703,6 +703,8 @@ MonoBehaviour:
   - {fileID: 5976406376814651784}
   activeLightMaterial: {fileID: 2100000, guid: 9e32837e3874ae343b66f81e3488d915, type: 2}
   healingZone: {fileID: 2914271077839145752}
+  startLightsSequence: 0
+  lightsSequenceEvent: {fileID: 0}
   insertSound: {fileID: 8300000, guid: 713926499de362b47b933e83f7e402f0, type: 3}
   errorSound: {fileID: 8300000, guid: f4c814c68ff35704ba97a08bdf11bf62, type: 3}
   completeSound: {fileID: 0}
@@ -1093,7 +1095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fe04466a26fdf448af217462dcb176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZonaLuz
-  light: {fileID: 0}
+  zoneLight: {fileID: 0}
 --- !u!1 &3265406901458640094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,8 +1223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631464858200b1b4d95b658376f6bac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  fuseName: Standard Fuse
-  targetFuseBox: {fileID: 1576342371883058663}
 --- !u!1 &3322807970581808568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,7 +1322,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6ab09681ba624d64fb2378e0ee6f6664, type: 2}
+  - {fileID: 2100000, guid: 254d325dc5f19d248a02b7163c5f5679, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1586,8 +1586,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631464858200b1b4d95b658376f6bac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  fuseName: Standard Fuse
-  targetFuseBox: {fileID: 1576342371883058663}
 --- !u!1 &4635419587536631117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,8 +1713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631464858200b1b4d95b658376f6bac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  fuseName: Standard Fuse
-  targetFuseBox: {fileID: 1576342371883058663}
 --- !u!1 &4868385245043672858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,7 +1964,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6ab09681ba624d64fb2378e0ee6f6664, type: 2}
+  - {fileID: 2100000, guid: 254d325dc5f19d248a02b7163c5f5679, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2196,7 +2192,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6ab09681ba624d64fb2378e0ee6f6664, type: 2}
+  - {fileID: 2100000, guid: 254d325dc5f19d248a02b7163c5f5679, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
