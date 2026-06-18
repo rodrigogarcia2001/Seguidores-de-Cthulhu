@@ -7,7 +7,7 @@ public class TripleKnobMiniGame : MonoBehaviour
     [Header("Events")]
     public UnityEvent onPuzzleCompleted;
     public UnityEvent onPuzzleFinished;
-
+    
     [Header("Bars")]
     public RectTransform bar1;
     public RectTransform bar2;
@@ -26,6 +26,8 @@ public class TripleKnobMiniGame : MonoBehaviour
     const float stunDuration = 0.5f;
     float time1, time2, time3;
     bool locked1, locked2, locked3;
+
+    private ElectricalPanel currentPanel;
 
     [Header("Controls")]
     public bool increase;
@@ -100,6 +102,7 @@ public class TripleKnobMiniGame : MonoBehaviour
             Complete();
         }
     }
+
     void GenerateZonesBalanced()
     {
         float halfWidth = bar1.rect.width / 2f;
@@ -168,6 +171,7 @@ public class TripleKnobMiniGame : MonoBehaviour
 
         humSource.Stop();
         audioSource.PlayOneShot(successSound);
+        currentPanel?.PuzzleCompleted();
 
         onPuzzleCompleted?.Invoke();
 
@@ -178,6 +182,14 @@ public class TripleKnobMiniGame : MonoBehaviour
 
     void OnEnable()
     {
+        value1 = value2 = value3 = 0f;
+
+        indicator1.anchoredPosition = new Vector2(0f, indicator1.anchoredPosition.y);
+        indicator2.anchoredPosition = new Vector2(0f, indicator2.anchoredPosition.y);
+        indicator3.anchoredPosition = new Vector2(0f, indicator3.anchoredPosition.y);
+
+        GenerateZonesBalanced();
+
         humSource.clip = backgroundHum;
         humSource.loop = true;
         humSource.Play();
@@ -186,6 +198,11 @@ public class TripleKnobMiniGame : MonoBehaviour
         time1 = time2 = time3 = 0f;
         locked1 = locked2 = locked3 = false;
         completed = false;
+    }
+
+    public void SetCurrentPanel(ElectricalPanel panel)
+    {
+        currentPanel = panel;
     }
 
     void TryStun(ref float stun, RectTransform indicator, RectTransform zone)

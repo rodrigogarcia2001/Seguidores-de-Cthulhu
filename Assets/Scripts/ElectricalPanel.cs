@@ -1,13 +1,13 @@
 using UnityEngine;
 using StarterAssets;
-
+using UnityEngine.Events;
 public class ElectricalPanel : MonoBehaviour
 {
     [Header("References")]
     public GameObject miniGameUI;
-
+    [SerializeField] private UnityEvent onPanelCompleted;
     public FirstPersonController playerController;
-
+    [SerializeField] private TripleKnobMiniGame miniGame;
     [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip panelOpenSound;
@@ -24,6 +24,7 @@ public class ElectricalPanel : MonoBehaviour
 
     void OpenMiniGame()
     {
+        miniGame.SetCurrentPanel(this);
         audioSource.PlayOneShot(panelOpenSound);
         miniGameUI.SetActive(true);
 
@@ -63,5 +64,10 @@ public class ElectricalPanel : MonoBehaviour
     {
         playerNearby = false;
         GetComponent<BoxCollider>().enabled = false;
+    }
+
+    public void PuzzleCompleted()
+    {
+        onPanelCompleted?.Invoke();
     }
 }

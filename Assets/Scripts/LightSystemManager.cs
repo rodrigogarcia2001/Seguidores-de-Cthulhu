@@ -1,22 +1,15 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class LightSystemManager : MonoBehaviour
 {
-    public void RepairAllLights()
-    {
-        BrokenSpotlight[] spotlights = FindObjectsByType<BrokenSpotlight>(FindObjectsSortMode.None);
+    [SerializeField] private List<BrokenSpotlight> spotlights;
 
+    public void RepairLights()
+    {
         foreach (BrokenSpotlight spotlight in spotlights)
         {
             spotlight.RepairSpotlight();
         }
-
-        TriggerSpotlight[] triggers = FindObjectsByType<TriggerSpotlight>(FindObjectsSortMode.None);
-
-        foreach (TriggerSpotlight trigger in triggers)
-        {
-            trigger.gameObject.SetActive(false);
-        }
-
     }
 }
