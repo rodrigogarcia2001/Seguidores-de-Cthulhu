@@ -86348,15 +86348,15 @@ PrefabInstance:
     - target: {fileID: 3752811139211729873, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 254d325dc5f19d248a02b7163c5f5679, type: 2}
+      objectReference: {fileID: 2100000, guid: 96c1c1f2eb1809047ace33bb5970387f, type: 2}
     - target: {fileID: 3778553889181052575, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 254d325dc5f19d248a02b7163c5f5679, type: 2}
+      objectReference: {fileID: 2100000, guid: 96c1c1f2eb1809047ace33bb5970387f, type: 2}
     - target: {fileID: 3839451195747171735, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 254d325dc5f19d248a02b7163c5f5679, type: 2}
+      objectReference: {fileID: 2100000, guid: 96c1c1f2eb1809047ace33bb5970387f, type: 2}
     - target: {fileID: 3899351751551580485, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
       propertyPath: m_Name
       value: Room_PuzzleFusibles (1)
@@ -86380,7 +86380,7 @@ PrefabInstance:
     - target: {fileID: 4600533397682576468, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 254d325dc5f19d248a02b7163c5f5679, type: 2}
+      objectReference: {fileID: 2100000, guid: 96c1c1f2eb1809047ace33bb5970387f, type: 2}
     - target: {fileID: 4635419587536631117, guid: ccb6a87ab9b4b2c4a87a361a31f6a017, type: 3}
       propertyPath: m_Name
       value: Key1
