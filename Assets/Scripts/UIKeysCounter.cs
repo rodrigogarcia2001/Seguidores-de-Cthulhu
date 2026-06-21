@@ -5,6 +5,9 @@ public class UIKeysCounter : MonoBehaviour
 {
     [SerializeField] private TMP_Text counterText;
     [SerializeField] private RectTransform keyUI;
+    [SerializeField] private AudioClip pickupSound;
+    [SerializeField] private float volume = 1f;
+    private bool initialized = false;
     private void Start()
     {
         UpdateText(
@@ -23,6 +26,12 @@ public class UIKeysCounter : MonoBehaviour
     private void UpdateText(int current, int total)
     {
         counterText.text = $"{current}/{total}";
+        
+        if (initialized && pickupSound != null)
+        AudioSource.PlayClipAtPoint(pickupSound, Camera.main.transform.position, volume);
+
+        initialized = true;
+
         StartCoroutine(PopAnimation());
     }
 

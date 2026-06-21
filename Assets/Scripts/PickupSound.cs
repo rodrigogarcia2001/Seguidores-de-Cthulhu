@@ -9,10 +9,15 @@ public class PickupSound : MonoBehaviour
     [SerializeField] private float volume = 1f;
 
     public void Play()
-    {
-        if (pickupSound == null)
-            return;
+{
+    Debug.Log("Play llamado");
 
-        AudioSource.PlayClipAtPoint(pickupSound, transform.position, volume);
+    if (pickupSound == null)
+    {
+        Debug.LogError("pickupSound es NULL");
+        return;
     }
+
+    AudioSource.PlayClipAtPoint(pickupSound, Camera.main.transform.position, 1f);
+}
 }

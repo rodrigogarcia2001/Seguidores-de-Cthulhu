@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class EndingCamera : MonoBehaviour
 {
     [SerializeField] private Transform player;
+    [SerializeField] private AudioSource footstepAudio;
+    [SerializeField] private AudioSource breathingAudio;
+    [SerializeField] private Animator playerAnimator;
     [SerializeField] private MonoBehaviour playerDie;
     [SerializeField] private MonoBehaviour sanityE;
     [SerializeField] private GameObject bar;
@@ -54,12 +57,18 @@ public class EndingCamera : MonoBehaviour
 
     public void StartEnding()
     {
+
+        if (breathingAudio != null)
+        breathingAudio.gameObject.SetActive(false);
         StartCoroutine(EndingSequence());
     }
 
     private IEnumerator EndingSequence()
     {
         yield return new WaitForSeconds(startDelay);
+
+        if (footstepAudio != null)
+        footstepAudio.gameObject.SetActive(false);
 
         if (playerDie != null)
             playerDie.enabled = false;
@@ -72,6 +81,9 @@ public class EndingCamera : MonoBehaviour
 
         if (characterController != null)
             characterController.enabled = false;
+        
+        if (playerAnimator != null)
+            playerAnimator.speed = 0f;
 
         Vector3 camStartPos = transform.position;
         Quaternion camStartRot = transform.rotation;
