@@ -9,7 +9,7 @@ public class PickupSound : MonoBehaviour
     [SerializeField] private float volume = 1f;
 
     public void Play()
-{
+   {
     Debug.Log("Play llamado");
 
     if (pickupSound == null)
@@ -19,5 +19,5 @@ public class PickupSound : MonoBehaviour
     }
 
     AudioSource.PlayClipAtPoint(pickupSound, Camera.main.transform.position, 1f);
-}
+   }
 }
