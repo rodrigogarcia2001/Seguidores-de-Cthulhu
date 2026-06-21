@@ -54873,6 +54873,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87db7a5b31472e847afb79f7f6e4efa0, type: 3}
+--- !u!1 &963561619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8806128486711430115, guid: 87db7a5b31472e847afb79f7f6e4efa0, type: 3}
+  m_PrefabInstance: {fileID: 963561618}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &964897287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88514,7 +88519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa08dbe79c54bc14a9a8ec1118226ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  screenGameOver: {fileID: 0}
+  screenGameOver: {fileID: 963561619}
   playerCamera: {fileID: 1743058261}
   volume: {fileID: 832575518}
   controlCamera: {fileID: 0}
