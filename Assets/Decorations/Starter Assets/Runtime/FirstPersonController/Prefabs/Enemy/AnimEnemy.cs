@@ -4,19 +4,17 @@ using UnityEngine.AI;
 public class AnimacionesEnemigo : MonoBehaviour
 {
     private Animator anim;
-    private NavMeshAgent agente;
     private Vector3 ultimaPosicion;
 
     void Start()
     {
         anim = GetComponent<Animator>();
-        agente = GetComponent<NavMeshAgent>();
         ultimaPosicion = transform.position;
     }
 
     void Update()
     {
-        if (anim == null || agente == null) return;
+        if (anim == null) return;
 
         Vector3 velocidadActual = (transform.position - ultimaPosicion) / Time.deltaTime;
         float velocidad = velocidadActual.magnitude;
