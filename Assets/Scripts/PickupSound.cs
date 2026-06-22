@@ -18,6 +18,6 @@ public class PickupSound : MonoBehaviour
         return;
     }
 
-    AudioSource.PlayClipAtPoint(pickupSound, Camera.main.transform.position, 1f);
+    AudioSource.PlayClipAtPoint(pickupSound, Camera.main.transform.position, volume);
    }
 }
