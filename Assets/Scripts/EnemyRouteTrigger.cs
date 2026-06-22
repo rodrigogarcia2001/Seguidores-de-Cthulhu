@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class EnemyRouteTrigger : MonoBehaviour
 {
-    [SerializeField] private EnemigoPatrullaIA enemy;
+    [SerializeField] private EnemyPatrolIA enemy;
     [SerializeField] private List<Transform> routePoints;
 
     private bool activated = false;
