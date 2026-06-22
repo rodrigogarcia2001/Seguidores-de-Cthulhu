@@ -42,6 +42,11 @@ public class SanityEffects : MonoBehaviour
         postProcessVolume.profile.TryGet(out vignette);
         postProcessVolume.profile.TryGet(out chromatic);
 
+        foreach (AudioClip clip in insanitySounds)
+        {
+           clip.LoadAudioData();
+        }
+
         // respiracion
         breathingSound.clip = normalBreathing;
         breathingSound.loop = true;
@@ -66,8 +71,9 @@ public class SanityEffects : MonoBehaviour
             {
                 vignette.active = true;
                 vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, 0.8f, Time.deltaTime * 0.6f);
-chromatic.intensity.value = Mathf.Lerp(chromatic.intensity.value, 1f * insanityIntensity, Time.deltaTime * 0.7f);
+                chromatic.intensity.value = Mathf.Lerp(chromatic.intensity.value, 1f * insanityIntensity, Time.deltaTime * 0.7f);
             }
+            
             insanityIntensity = Mathf.Lerp(insanityIntensity, 1f, Time.deltaTime * speedEntrance);
         }
         else
